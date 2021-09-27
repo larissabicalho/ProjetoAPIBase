@@ -1,5 +1,6 @@
 package com.javarestassuredtemplate.jsonObjects.Users;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
+import com.javarestassuredtemplate.utils.GerarDados;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CriarUsuario {
 
-    private String username = GlobalStaticParameters.username;
+    private String username = GerarDados.nomeUser();
     private String password = GlobalStaticParameters.password;
-    private String real_name = GlobalStaticParameters.real_name;
-    private String email = GlobalStaticParameters.email;
+    private String real_name = GerarDados.fullName();
+    private String email = GerarDados.email();
 }

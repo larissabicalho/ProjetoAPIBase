@@ -1,9 +1,11 @@
 package com.javarestassuredtemplate.tests.Users;
 
 import com.javarestassuredtemplate.bases.TestBase;
+import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
+import com.javarestassuredtemplate.requests.Users.DeletarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
@@ -11,33 +13,31 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 
+public class DeletarUsuarioTests extends TestBase {
 
-public class CriarUsuarioTests extends TestBase {
-
-    CriarUsuarioRequest criarUsuarioRequest;
+    DeletarUsuarioRequest deletarUsuarioRequest;
     ValidatableResponse response;
-    int statusCodeEsperado = HttpStatus.SC_CREATED;
+    int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
     GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void criarUsuarioSucesso(){
+    public void deletarUsuarioComSucesso(){
         //Busca dados do usuario
-        CriarUsuario criarUsuario = new CriarUsuario();
         //fluxo
-        criarUsuarioRequest = new CriarUsuarioRequest();
-        criarUsuarioRequest.setJsonBodyUsingJavaObject(criarUsuario);
-        response = criarUsuarioRequest.executeRequest();
+        BuscarUsuarioDBSteps.insereUsuario();
+        String idUsuario = BuscarUsuarioDBSteps.retornaIdUsuario();
+        deletarUsuarioRequest = new DeletarUsuarioRequest(idUsuario);
+        response = deletarUsuarioRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-        response.body(
+      /*  response.body(
                 "user.name", equalTo(criarUsuario.getUsername()),
                 "user.real_name", equalTo(criarUsuario.getReal_name()),
-                 "user.email", equalTo(criarUsuario.getEmail())
-        );
+                "user.email", equalTo(criarUsuario.getEmail())
+        ); */
 
     }
-
 
 }
