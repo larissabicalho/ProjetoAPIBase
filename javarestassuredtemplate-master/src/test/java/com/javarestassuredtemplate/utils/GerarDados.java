@@ -18,4 +18,9 @@ public class GerarDados {
         return faker.internet().emailAddress();
     }
 
+    public static long numeroAleatorio(){
+        Random r = new Random();
+        return r.nextInt();
+    }
+
 }
