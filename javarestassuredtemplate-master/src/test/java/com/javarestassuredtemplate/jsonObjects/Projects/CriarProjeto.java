@@ -1,8 +1,5 @@
 package com.javarestassuredtemplate.jsonObjects.Projects;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Category;
-import com.javarestassuredtemplate.jsonObjects.Tag;
-import com.javarestassuredtemplate.utils.GerarDados;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,13 +21,13 @@ public class CriarProjeto {
 
     public void setDados() {
         status = new Status();
-        status.setId(10);
-        status.setName("development");
-        status.setLabel("development");
+        status.setId(GlobalStaticParameters.statusId);
+        status.setName(GlobalStaticParameters.statusName);
+        status.setLabel(GlobalStaticParameters.statusName);
         view_state = new View_State();
-        view_state.setId(10);
-        view_state.setName("public");
-        view_state.setLabel("public");
+        view_state.setId(GlobalStaticParameters.statusId);
+        view_state.setName(GlobalStaticParameters.viewStateName);
+        view_state.setLabel(GlobalStaticParameters.viewStateName);
     }
 
 }

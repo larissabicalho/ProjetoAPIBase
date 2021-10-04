@@ -1,0 +1,1 @@
+SELECT id,name,description FROM bugtracker.mantis_project_table

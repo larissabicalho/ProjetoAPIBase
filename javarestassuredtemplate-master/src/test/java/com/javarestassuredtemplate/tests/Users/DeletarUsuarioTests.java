@@ -32,11 +32,6 @@ public class DeletarUsuarioTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-      /*  response.body(
-                "user.name", equalTo(criarUsuario.getUsername()),
-                "user.real_name", equalTo(criarUsuario.getReal_name()),
-                "user.email", equalTo(criarUsuario.getEmail())
-        ); */
 
     }
 

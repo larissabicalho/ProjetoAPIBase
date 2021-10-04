@@ -27,11 +27,9 @@ public class BuscarProjetoTests extends TestBase {
     public void buscarProjetoComSucesso(){
         //Busca dados do usuario
         //fluxo
-        String projetoName = GlobalStaticParameters.projetoName;
-        String file_path = GlobalStaticParameters.file_path;
-        String description = GlobalStaticParameters.description;
-        BuscarProjetoDBSteps.insereProjeto(projetoName, file_path, description);
-        String idProjeto = BuscarProjetoDBSteps.retornaIdProjeto();
+
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
         buscarProjetoRequest = new BuscarProjetoRequest(idProjeto);
         response = buscarProjetoRequest.executeRequest();
         //Validações
@@ -39,10 +37,9 @@ public class BuscarProjetoTests extends TestBase {
         response.statusCode(statusCodeEsperado);
 
        response.body(
-                "projects[0].id", equalTo(idProjeto),
-                "projects[0].name", equalTo(projetoName),
-                "projects[0].description", equalTo(description)
-
+                "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
+                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
+                "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
         );
 
     }

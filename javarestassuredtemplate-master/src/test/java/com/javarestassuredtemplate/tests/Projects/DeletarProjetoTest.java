@@ -14,29 +14,19 @@ public class DeletarProjetoTest extends TestBase {
 
     DeletarProjetoRequest deletarProjetoRequest;
     ValidatableResponse response;
-    int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
-    GlobalStaticParameters globalStaticParameters;
+    int statusCodeEsperado = HttpStatus.SC_OK;
 
     @Test
     public void deletarProjetoComSucesso(){
         //Busca dados do usuario
         //fluxo
-        String projetoName = GlobalStaticParameters.projetoName;
-        String file_path = GlobalStaticParameters.file_path;
-        String description = GlobalStaticParameters.description;
-        BuscarProjetoDBSteps.insereProjeto(projetoName, file_path, description);
+        BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaIdProjeto();
         deletarProjetoRequest = new DeletarProjetoRequest(idProjeto);
         response = deletarProjetoRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
-
-      /*  response.body(
-                "user.name", equalTo(criarUsuario.getUsername()),
-                "user.real_name", equalTo(criarUsuario.getReal_name()),
-                "user.email", equalTo(criarUsuario.getEmail())
-        ); */
 
     }
 }
