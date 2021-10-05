@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CriarProjeto {
+
     private long id;
     private String name = GlobalStaticParameters.projetoName;
     private Status status;

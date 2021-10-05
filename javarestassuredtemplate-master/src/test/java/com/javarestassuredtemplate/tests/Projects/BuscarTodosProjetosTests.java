@@ -19,22 +19,24 @@ public class BuscarTodosProjetosTests extends TestBase {
    BuscarTodosOsProjetosRequest buscarTodosOsProjetosRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
+    GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void buscarTodosProjetosComSucesso() {
+    public void buscarProjetoComSucesso() {
         //Busca dados do usuario
         //fluxo
 
         BuscarProjetoDBSteps.insereProjeto();
         buscarTodosOsProjetosRequest = new BuscarTodosOsProjetosRequest();
-        ArrayList<String> idsProjetos = BuscarProjetoDBSteps.retornaIdsProjetos();
+        ArrayList<String> idsProjetos = BuscarProjetoDBSteps.retornaIdNameProjetos();
         response = buscarTodosOsProjetosRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
         for (int i = idsProjetos.size(); i==0; i--) {
             response.body(
-                    "projects["+i+"].id", equalTo(Integer.valueOf(idsProjetos.get(i)))
+                    "projects["+i+"]..id", equalTo(Integer.valueOf(idsProjetos.get(i))),
+                     "projects["+(i+1)+"]..name", equalTo(Integer.valueOf(idsProjetos.get(i+1)))
             );
 
         }

@@ -14,7 +14,7 @@ public class BuscarProjetoDBSteps {
 
     public static void insereProjeto(){
         String query = GeneralUtils.readFileToAString(queriesPath + "inserirProjeto.sql");
-        query = query.replace("$name", GlobalStaticParameters.projetoName);
+        query = query.replace("$name", "Projeto Teste Larissa" + " " + GerarDados.numeroAleatorio() + GerarDados.numeroAleatorio());
         query = query.replace("$file_path",GlobalStaticParameters.file_path);
         query = query.replace("$description", GlobalStaticParameters.description);
         DBUtils.getQueryResult(query);
@@ -25,13 +25,23 @@ public class BuscarProjetoDBSteps {
         return DBUtils.getQueryResult(queryResultado).get(0);
     }
 
+    public static String retornaIdPenultimoProjeto(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdPenultimoProjeto.sql");
+        return DBUtils.getQueryResult(queryResultado).get(0);
+    }
+
+    public static ArrayList<String>retornaIdNameUltimoIdProjeto(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdNameUltimoProjeto.sql");
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
     public static ArrayList<String> retornaDadosProjeto(){
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaDadosProjeto.sql");
         return DBUtils.getQueryResult(queryResultado);
     }
 
-    public static ArrayList<String> retornaIdsProjetos(){
-        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdsProjetos.sql");
+    public static ArrayList<String> retornaIdNameProjetos(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdsNamesProjetos.sql");
         return DBUtils.getQueryResult(queryResultado);
     }
 

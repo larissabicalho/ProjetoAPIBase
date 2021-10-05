@@ -15,8 +15,6 @@
         CriarProjetoRequest criarProjetoRequest;
         ValidatableResponse response;
         int statusCodeEsperado = HttpStatus.SC_CREATED;
-        GlobalStaticParameters globalStaticParameters;
-
         @Test
         public void criarProjetoSucesso() {
             CriarProjeto criarProjeto = new CriarProjeto();
