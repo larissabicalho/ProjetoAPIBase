@@ -1,8 +1,10 @@
 package com.javarestassuredtemplate.requests.Project;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
+import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
 import com.javarestassuredtemplate.jsonObjects.Projects.Status;
+import com.javarestassuredtemplate.jsonObjects.Projects.VersionProject;
 import com.javarestassuredtemplate.jsonObjects.Projects.View_State;
 import io.restassured.http.Method;
 
@@ -16,24 +18,16 @@ public class CriarVersaoProjetoRequest extends RequestRestBase {
         headers.put("Content-Type", "application/json");
     }
 
-
-    public void setJsonBodyUsingJavaObject(long id,
-                                           String name,
-                                           long idStatus,
-                                           String nameStatus,
-                                           String nameView,
-                                           String labelStatus,
-                                           String labelView,
+    public void setJsonBodyUsingJavaObject(String name,
                                            String description,
-                                           boolean enabled,
-                                           String file_path){
-        jsonBody = new CriarProjeto(id,
-                   name,
-                   new Status(idStatus,nameStatus,labelStatus),
-                   description,
-                   enabled,
-                   file_path,
-                   new View_State(idStatus, nameView, labelView)
+                                           boolean released,
+                                           boolean obsolete,
+                                           String timestamp){
+        jsonBody = new VersionProject(name,
+                description,
+                released,
+                obsolete,
+                timestamp
         );
     }
 

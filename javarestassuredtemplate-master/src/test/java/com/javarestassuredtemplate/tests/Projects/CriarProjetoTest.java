@@ -1,6 +1,7 @@
     package com.javarestassuredtemplate.tests.Projects;
 
     import com.javarestassuredtemplate.bases.TestBase;
+    import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
     import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
     import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
     import com.javarestassuredtemplate.requests.Project.CriarProjetoRequest;
@@ -40,5 +41,8 @@
                                             "project.view_state.id", equalTo((int)criarProjeto.getView_state().getId()),
                                                     "project.view_state.name",equalTo(criarProjeto.getView_state().getName()),
                                                             "project.view_state.label",equalTo(criarProjeto.getView_state().getLabel()));
+
+               String idProjeto = BuscarProjetoDBSteps.retornaIdProjeto();
+               BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         }
     }

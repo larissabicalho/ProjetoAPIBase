@@ -28,7 +28,7 @@ public class BuscarTodosProjetosTests extends TestBase {
 
         BuscarProjetoDBSteps.insereProjeto();
         buscarTodosOsProjetosRequest = new BuscarTodosOsProjetosRequest();
-        ArrayList<String> idsProjetos = BuscarProjetoDBSteps.retornaIdNameProjetos();
+        ArrayList<String> idsProjetos = BuscarProjetoDBSteps.retornaDadosProjetoTodos();
         response = buscarTodosOsProjetosRequest.executeRequest();
         //Validações
         response.log().all();
@@ -39,6 +39,11 @@ public class BuscarTodosProjetosTests extends TestBase {
                      "projects["+(i+1)+"]..name", equalTo(Integer.valueOf(idsProjetos.get(i+1)))
             );
 
+        }
+        int i =0;
+        while (i < idsProjetos.size()) {
+            BuscarProjetoDBSteps.deletarProjeto(idsProjetos.get(i));
+            i = i + 2;
         }
     }
 }

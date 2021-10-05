@@ -4,6 +4,8 @@ import com.javarestassuredtemplate.utils.DBUtils;
 import com.javarestassuredtemplate.utils.GeneralUtils;
 import com.javarestassuredtemplate.utils.GerarDados;
 
+import java.util.ArrayList;
+
 public class BuscarUsuarioDBSteps {
   //   System.getProperty("user.dir")+
     private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/";
@@ -19,6 +21,11 @@ public class BuscarUsuarioDBSteps {
     public static String retornaIdUsuario(){
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdUsuario.sql");
         return DBUtils.getQueryResult(queryResultado).get(0);
+    }
+
+    public static ArrayList<String> retornaUsuarioAdm(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarUsuarioAdm.sql");
+        return DBUtils.getQueryResult(queryResultado);
     }
 
 }

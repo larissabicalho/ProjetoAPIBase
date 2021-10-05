@@ -42,6 +42,8 @@ public class BuscarProjetoTests extends TestBase {
                 "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
         );
 
+          BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+
     }
 
 }

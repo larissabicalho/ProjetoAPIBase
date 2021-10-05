@@ -1,5 +1,6 @@
 package com.javarestassuredtemplate.jsonObjects.Projects;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
+import com.javarestassuredtemplate.utils.GerarDados;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +13,10 @@ import lombok.Setter;
 public class CriarProjeto {
 
     private long id;
-    private String name = GlobalStaticParameters.projetoName;
+    private String name = GerarDados.nomeUser();
     private Status status;
     private String description = GlobalStaticParameters.description;
-    private boolean enabled = true;
+    private boolean enabled = GlobalStaticParameters.enabled;
     private String file_path = GlobalStaticParameters.file_path;
     private View_State view_state;
 
