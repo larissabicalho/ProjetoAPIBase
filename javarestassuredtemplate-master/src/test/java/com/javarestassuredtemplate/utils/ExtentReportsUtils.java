@@ -89,7 +89,7 @@ public class ExtentReportsUtils {
             }
         }
 
-        node.log(Status.INFO, "<pre>" + "<b>STATUS CODE: </b>" + response.statusCode() + "</pre>");
+        node.log(Status.INFO, "<pre>" + "<b>STATUS.java CODE: </b>" + response.statusCode() + "</pre>");
         node.log(Status.INFO, "<pre>" + "<b>RESPONSE HEADERS: </b>" + "\n" + allResponseHeaders + "</pre>");
         try {
             node.log(Status.INFO, "<pre>" + "<b>PAYLOAD: </b>" + "\n" + GeneralUtils.formatJson(response.body().jsonPath().get().toString()) + "</pre>");
@@ -130,7 +130,7 @@ public class ExtentReportsUtils {
             TEST.log(Status.INFO, "<pre>" + "<b>AUTHENTICATOR TYPE: "+authenticationType.toString()+"</b>" + "\n" + "<b>USER: </b>"+ authenticatorUser + "\n" + "<b>PASSWORD: </b>" + authenticatorPassword + "</pre>");
         }
 
-        TEST.log(Status.INFO, "<pre>" + "<b>STATUS CODE: </b>" + response.statusCode() + "</pre>");
+        TEST.log(Status.INFO, "<pre>" + "<b>STATUS.java CODE: </b>" + response.statusCode() + "</pre>");
         TEST.log(Status.INFO, "<pre>" + "<b>RESPONSE HEADERS: </b>" + "\n" + allResponseHeaders + "</pre>");
         TEST.log(Status.INFO, "<b>PAYLOAD: </b> <textarea>" + "\n" + GeneralUtils.formatJson(response.body().jsonPath().get().toString()) + "</textarea>");
     }
