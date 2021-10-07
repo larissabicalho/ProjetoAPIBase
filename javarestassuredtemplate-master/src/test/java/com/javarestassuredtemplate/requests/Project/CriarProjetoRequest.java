@@ -1,6 +1,7 @@
 package com.javarestassuredtemplate.requests.Project;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
+import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
 import com.javarestassuredtemplate.jsonObjects.Projects.Status;
 import com.javarestassuredtemplate.jsonObjects.Projects.View_State;
@@ -12,7 +13,7 @@ public class CriarProjetoRequest extends RequestRestBase {
     public CriarProjetoRequest() {
         requestService = "/api/rest/projects/";
         method = Method.POST;
-        headers.put("Authorization", "cMyRDGhiz3P8Z4p1cip_0J38eUm1g1cV");
+        headers.put("Authorization", GlobalStaticParameters.token);
         headers.put("Content-Type", "application/json");
     }
 

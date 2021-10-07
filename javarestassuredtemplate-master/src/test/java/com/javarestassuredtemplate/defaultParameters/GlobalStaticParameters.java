@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class GlobalStaticParameters {
     //usersParameteres
     public static String password = "abc123";
+    public static String token = "pE9b38G5lKIWus6BKsVJ87t-2w2gLqaj";
 
     //projectsParameteres
     public static String file_path = "/temp";

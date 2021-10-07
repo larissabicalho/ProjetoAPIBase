@@ -14,7 +14,7 @@ public class CriarVersaoProjetoRequest extends RequestRestBase {
     public CriarVersaoProjetoRequest(String idProjeto) {
         requestService = "/api/rest/projects/"+idProjeto+"/versions/";
         method = Method.POST;
-        headers.put("Authorization", "cMyRDGhiz3P8Z4p1cip_0J38eUm1g1cV");
+        headers.put("Authorization", GlobalStaticParameters.token);
         headers.put("Content-Type", "application/json");
     }
 

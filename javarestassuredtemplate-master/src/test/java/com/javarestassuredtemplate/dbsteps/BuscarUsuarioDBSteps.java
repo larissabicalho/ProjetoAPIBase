@@ -28,4 +28,9 @@ public class BuscarUsuarioDBSteps {
         return DBUtils.getQueryResult(queryResultado);
     }
 
+    public static void deletarUsuario(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarUsuario.sql");
+        DBUtils.getQueryResult(query);
+    }
+
 }
