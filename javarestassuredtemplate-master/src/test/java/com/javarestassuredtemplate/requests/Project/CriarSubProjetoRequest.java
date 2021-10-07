@@ -1,6 +1,7 @@
 package com.javarestassuredtemplate.requests.Project;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
+import com.javarestassuredtemplate.jsonObjects.Project;
 import com.javarestassuredtemplate.jsonObjects.Projects.*;
 import io.restassured.http.Method;
 

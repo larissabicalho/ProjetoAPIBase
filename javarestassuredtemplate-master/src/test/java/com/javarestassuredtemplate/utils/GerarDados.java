@@ -21,18 +21,14 @@ public class GerarDados {
         return faker.internet().emailAddress();
     }
 
-    public static String nomeProjeto () {
-        return "Projeto Teste Larissa" + " " + GerarDados.numeroAleatorio() + GerarDados.numeroAleatorio();
-
-    }
-
-    public static String nomeFiltro() {
-        return "Filtro Larissa" + " " + GerarDados.numeroAleatorio();
-
-    }
 
     public static String numeroAleatorio(){
         return String.valueOf(new Random().nextInt(100));
+
+    }
+
+    public static String nomeProjeto () {
+        return "Projeto Teste Larissa" + " " + GerarDados.numeroAleatorio() + GerarDados.numeroAleatorio();
 
     }
 
@@ -41,6 +37,16 @@ public class GerarDados {
         a = a+86400000;
         String data = new SimpleDateFormat("yyyy-mm-dd").format(a) ;
         return data;
+    }
+
+    public static String geraStringAleatoria(long min, long max) {
+        return String.valueOf(new Faker(LOCALE).number().numberBetween(min, max));
+    }
+
+
+    public static String sumarioIssue() {
+        return "Sumario Larissa" + " " + GerarDados.geraStringAleatoria(10,30);
+
     }
 
 }

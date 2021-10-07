@@ -1,8 +1,6 @@
 package com.javarestassuredtemplate.jsonObjects.Projects;
 
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-
-import com.javarestassuredtemplate.jsonObjects.Category;
+import com.javarestassuredtemplate.jsonObjects.Project;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

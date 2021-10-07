@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class BuscarUsuarioDBSteps {
   //   System.getProperty("user.dir")+
-    private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/";
+    private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/Users/";
 
     public static void insereUsuario(){
         String query = GeneralUtils.readFileToAString(queriesPath + "inserirUsuario.sql");

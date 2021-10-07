@@ -10,7 +10,7 @@ import com.sun.xml.xsom.impl.scd.Iterators;
 import java.util.ArrayList;
 
 public class BuscarProjetoDBSteps {
-    private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/";
+    private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/Projects/";
 
     public static void insereProjeto(){
         String query = GeneralUtils.readFileToAString(queriesPath + "inserirProjeto.sql");

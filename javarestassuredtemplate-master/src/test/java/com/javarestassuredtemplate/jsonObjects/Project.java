@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.jsonObjects.Projects;
+package com.javarestassuredtemplate.jsonObjects;
 import com.javarestassuredtemplate.jsonObjects.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
