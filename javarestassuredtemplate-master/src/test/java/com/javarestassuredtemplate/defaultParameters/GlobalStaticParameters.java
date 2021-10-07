@@ -23,4 +23,9 @@ public class GlobalStaticParameters {
     public static boolean obsolete = false;
     public static String timestamp = GerarDados.dataVersion();
 
+  //configOption
+    public static String configOption = "csv_separator";
+    public static String configOptionValue = ",";
+
+
 }

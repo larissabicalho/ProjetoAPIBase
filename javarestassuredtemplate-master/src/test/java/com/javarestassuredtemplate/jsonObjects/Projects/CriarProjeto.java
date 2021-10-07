@@ -13,7 +13,7 @@ import lombok.Setter;
 public class CriarProjeto {
 
     private long id;
-    private String name = GerarDados.nomeUser();
+    private String name = GerarDados.nomeProjeto();
     private Status status;
     private String description = GlobalStaticParameters.description;
     private boolean enabled = GlobalStaticParameters.enabled;

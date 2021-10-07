@@ -25,6 +25,12 @@ public class GerarDados {
         return "Projeto Teste Larissa" + " " + GerarDados.numeroAleatorio() + GerarDados.numeroAleatorio();
 
     }
+
+    public static String nomeFiltro() {
+        return "Filtro Larissa" + " " + GerarDados.numeroAleatorio();
+
+    }
+
     public static String numeroAleatorio(){
         return String.valueOf(new Random().nextInt(100));
 
