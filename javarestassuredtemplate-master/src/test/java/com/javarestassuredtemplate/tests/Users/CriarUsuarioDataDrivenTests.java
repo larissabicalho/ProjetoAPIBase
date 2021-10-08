@@ -11,6 +11,8 @@ import jxl.Workbook;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static org.hamcrest.Matchers.equalTo;
+
 
 public class CriarUsuarioDataDrivenTests extends TestBase {
     CriarUsuarioRequest criarUsuarioRequest;
@@ -50,7 +52,6 @@ public class CriarUsuarioDataDrivenTests extends TestBase {
             //Validações
             response.log().all();
             response.statusCode(statusEsperado);
-
             BuscarUsuarioDBSteps.deletarUsuario();
 
         }

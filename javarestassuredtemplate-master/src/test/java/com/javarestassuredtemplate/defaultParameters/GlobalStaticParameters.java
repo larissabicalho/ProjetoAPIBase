@@ -37,5 +37,10 @@ public class GlobalStaticParameters {
     public static String langOption = String.valueOf(Names.all_projects);
     public static String langsOptions = "string[]=" + Names.all_projects+ "&string[]=" + Names.does_not_exist + "&string[]=" + Names.status + "&string[]=" + Names.move_bugs+ "&string[]=" + Names.status_enum_string + "";
 
+    //issuename
+
+    public static String nameCategory = "General";
+
+
 }
 
