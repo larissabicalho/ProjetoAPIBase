@@ -64,6 +64,12 @@ public class BuscarIssueDBSteps {
     }
 
 
+    public static ArrayList<String> retornaDadosTodasIssueIdProjeto(String idProjeto){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssueIdProjeto.sql");
+        queryResultado = queryResultado.replace("$project_id", idProjeto);
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
     public static void deletarIssueId(String idIssue){
         String query = GeneralUtils.readFileToAString(queriesPath + "deletarIssueTodas.sql");
         query = query.replace("$idIssue", idIssue);
