@@ -1,1 +1,1 @@
-SELECT id,name FROM bugtracker.mantis_project_table;
+select id,name from bugtracker.mantis_project_table order by name

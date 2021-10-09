@@ -22,7 +22,7 @@ public class BuscarTodosProjetosTests extends TestBase {
     GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void buscarProjetoComSucesso() {
+    public void buscarTodosProjetosComSucesso() {
         //Busca dados do usuario
         //fluxo
 
@@ -33,14 +33,21 @@ public class BuscarTodosProjetosTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
-        for (int i = idsProjetos.size(); i==0; i--) {
+        int i = 0;
+        int jName = 1;
+        int kProjeto =0;
+        int mPossicoes = 0;
+        while(( jName <= idsProjetos.size()-1 ) && (kProjeto <= idsProjetos.size()-2)){
+
             response.body(
-                    "projects["+i+"]..id", equalTo(Integer.valueOf(idsProjetos.get(i))),
-                     "projects["+(i+1)+"]..name", equalTo(Integer.valueOf(idsProjetos.get(i+1)))
+                    "projects["+mPossicoes+"].id" , equalTo(Integer.parseInt(idsProjetos.get(kProjeto))),
+                     "projects["+mPossicoes+"].name", equalTo(idsProjetos.get(jName))
             );
+            kProjeto = kProjeto + 2;
+            jName = jName + 2;
+            mPossicoes = mPossicoes +1;
 
         }
-        int i =0;
         while (i < idsProjetos.size()) {
             BuscarProjetoDBSteps.deletarProjeto(idsProjetos.get(i));
             i = i + 2;

@@ -48,6 +48,7 @@ public class CriarIssueTests extends TestBase {
         );
 
          BuscarIssueDBSteps.deletarIssue();
+         BuscarIssueDBSteps.deletarTexto();
          BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
     }

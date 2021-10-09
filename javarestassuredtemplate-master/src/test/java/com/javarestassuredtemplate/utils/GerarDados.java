@@ -1,6 +1,7 @@
 package com.javarestassuredtemplate.utils;
 import com.github.javafaker.Faker;
 
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -39,13 +40,44 @@ public class GerarDados {
         return data;
     }
 
-    public static String geraStringAleatoria(long min, long max) {
-        return String.valueOf(new Faker(LOCALE).number().numberBetween(min, max));
+
+    public static String getRandomString(int i)
+    {
+
+        byte[] bytearray;
+        String mystring;
+        StringBuffer thebuffer;
+
+        bytearray = new byte[256];
+        new Random().nextBytes(bytearray);
+
+        mystring
+                = new String(bytearray, Charset.forName("UTF-8"));
+
+        // Create the StringBuffer
+        thebuffer = new StringBuffer();
+
+        for (int m = 0; m < mystring.length(); m++) {
+
+            char n = mystring.charAt(m);
+
+            if (((n >= 'A' && n <= 'Z')
+                    || (n >= '0' && n <= '9'))
+                    && (i > 0)) {
+
+                thebuffer.append(n);
+                i--;
+            }
+        }
+
+        // resulting string
+        return thebuffer.toString();
     }
 
 
+
     public static String sumarioIssue() {
-        return "Sumario Larissa" + " " + GerarDados.geraStringAleatoria(10,30);
+        return "Sumario Larissa" + " " + GerarDados.getRandomString(10);
 
     }
 

@@ -1,0 +1,1 @@
+select id  from bugtracker.mantis_bug_text_table
