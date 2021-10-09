@@ -34,9 +34,10 @@ public class BuscarConfigsOptionTests extends TestBase {
         response.statusCode(statusCodeEsperado);
         List<Options> list = Arrays.asList(Options.values());
         for(int i = 0; i < list.size()-2; i++) {
-            response.body(
-                    "configs.option["+i+"]", equalTo(list.get(i).name())
-            );
+
+           response.body(
+                   "configs.option["+i+"]", equalTo(list.get(i).name())
+           );
         }
     }
 

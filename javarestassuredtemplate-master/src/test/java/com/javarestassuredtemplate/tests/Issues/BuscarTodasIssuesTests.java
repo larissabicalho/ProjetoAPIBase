@@ -34,16 +34,16 @@ public class BuscarTodasIssuesTests extends TestBase {
         BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
         buscarTodasIssuesRequest = new BuscarTodasIssuesRequest();
         ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssue();
-       ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
+        ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
         response = buscarTodasIssuesRequest.executeRequest();
         //Validações
-         response.log().all();
+        response.log().all();
         response.statusCode(statusCodeEsperado);
         int iiD = 0;
         int jProject = 1;
         int kSummary = 2;
         int mPossicoes = 0;
-        while(( iiD <= idsIssues.size()-3 ) && (jProject <= idsIssues.size()-2) && (kSummary <= idsIssues.size()-2)){
+        while(( iiD <= idsIssues.size()-3 ) && (jProject <= idsIssues.size()-2) && (kSummary <= idsIssues.size()-1)){
             response.body(
                     "issues.id["+mPossicoes+"]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornaDadosTodasIssue().get(iiD))),
                     "issues.summary["+mPossicoes+"]", equalTo(BuscarIssueDBSteps.retornaDadosTodasIssue().get(kSummary)),
@@ -56,7 +56,6 @@ public class BuscarTodasIssuesTests extends TestBase {
 
         }
 
-
        int n = 0;
         while (n <= idsIssues.size()-3) {
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
@@ -68,10 +67,10 @@ public class BuscarTodasIssuesTests extends TestBase {
            BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
             p = p + 3;
         }
-
-        for(int j = 0; j < idsTexto.size(); j++) {
-            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(j));
+      for(int v = 0; v < idsTexto.size(); v++) {
+            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
      }
+
 
     }
 }

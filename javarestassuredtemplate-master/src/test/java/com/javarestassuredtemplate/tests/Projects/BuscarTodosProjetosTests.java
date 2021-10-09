@@ -29,7 +29,8 @@ public class BuscarTodosProjetosTests extends TestBase {
         BuscarProjetoDBSteps.insereProjeto();
         buscarTodosOsProjetosRequest = new BuscarTodosOsProjetosRequest();
         ArrayList<String> idsProjetos = BuscarProjetoDBSteps.retornaDadosProjetoTodos();
-        response = buscarTodosOsProjetosRequest.executeRequest();
+
+       response = buscarTodosOsProjetosRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
