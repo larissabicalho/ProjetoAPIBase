@@ -16,8 +16,7 @@ public class SubProject {
      private boolean inherit_parent = true;
 
     public void setDados(String name) {
-        project = new Project();
-        project.setName(name);
+        project = new Project(name);
     }
 
 

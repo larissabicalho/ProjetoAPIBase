@@ -7,8 +7,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Project {
+    private long id;
     private String name;
+
+    public Project(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Project(String name) {
+        this.name = name;
+    }
 }

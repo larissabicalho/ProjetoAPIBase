@@ -40,6 +40,7 @@ public class GlobalStaticParameters {
     //issuename
 
     public static String nameCategory = "General";
+    public static String statusIssue = "assigned";
 
 
 }

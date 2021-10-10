@@ -2,7 +2,9 @@ package com.javarestassuredtemplate.jsonObjects.Issues;
 
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Category;
+import com.javarestassuredtemplate.jsonObjects.Handler;
 import com.javarestassuredtemplate.jsonObjects.Project;
+import com.javarestassuredtemplate.jsonObjects.Status;
 import com.javarestassuredtemplate.utils.GerarDados;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,15 +15,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CriarIssue {
-    private String summary = GerarDados.sumarioIssue();
-    private String description = GlobalStaticParameters.description;
-    private Category category;
-    private Project project;
+public class UpdateIssue {
+    private Handler handler;
+    private Status status;
 
-    public void setDados(String projectName) {
-        category = new Category(GlobalStaticParameters.nameCategory);
-        project = new Project(projectName);
+    public void setDados(String userName) {
+        handler = new Handler();
+        handler.setName(userName);
+        status = new Status();
+        status.setName(GlobalStaticParameters.statusIssue);
     }
 }
 

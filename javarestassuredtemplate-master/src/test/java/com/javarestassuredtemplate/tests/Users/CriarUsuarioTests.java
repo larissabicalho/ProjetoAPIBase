@@ -1,6 +1,7 @@
 package com.javarestassuredtemplate.tests.Users;
 
 import com.javarestassuredtemplate.bases.TestBase;
+import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
@@ -36,6 +37,9 @@ public class CriarUsuarioTests extends TestBase {
                 "user.real_name", equalTo(criarUsuario.getReal_name()),
                  "user.email", equalTo(criarUsuario.getEmail())
         );
+
+        String idUsuario = BuscarUsuarioDBSteps.retornaIdUsuario();
+        BuscarUsuarioDBSteps.deletarUsuarioId(idUsuario);
 
     }
 
