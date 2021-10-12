@@ -47,6 +47,9 @@ public class GlobalStaticParameters {
     public static String nameField = "The City";
     public static String valueCustomField = "Seattle";
 
+    //issuenotes
+    public static String time = "00:30";
+
 
 }
 

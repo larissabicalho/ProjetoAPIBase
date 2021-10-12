@@ -30,7 +30,7 @@ public class GerarDados {
     }
 
     public static String nomeProjeto () {
-        return "Projeto Teste Larissa" + " " + GerarDados.numeroAleatorio() + GerarDados.numeroAleatorio();
+        return "Projeto Teste Larissa" + " " + GerarDados.getRandomString(3) + GerarDados.numeroAleatorio();
 
     }
 

@@ -34,6 +34,9 @@ public class GeneralUtils {
         return new String(encoded, StandardCharsets.ISO_8859_1);
     }
 
+
+
+
     public static String getNowDate(String mask){
         DateFormat dateFormat = new SimpleDateFormat(mask);
         Date date = new Date();

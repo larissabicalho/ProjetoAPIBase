@@ -1,5 +1,7 @@
 package com.javarestassuredtemplate.jsonObjects.Projects;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
+import com.javarestassuredtemplate.jsonObjects.Status;
+import com.javarestassuredtemplate.jsonObjects.View_State;
 import com.javarestassuredtemplate.utils.GerarDados;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,10 +24,7 @@ public class CriarProjeto {
 
 
     public void setDados() {
-        status = new Status();
-        status.setId(GlobalStaticParameters.statusId);
-        status.setName(GlobalStaticParameters.statusName);
-        status.setLabel(GlobalStaticParameters.statusName);
+        status = new Status(GlobalStaticParameters.statusId,GlobalStaticParameters.statusName,GlobalStaticParameters.statusName);
         view_state = new View_State(GlobalStaticParameters.statusId, GlobalStaticParameters.viewStateName, GlobalStaticParameters.viewStateName);
     }
 

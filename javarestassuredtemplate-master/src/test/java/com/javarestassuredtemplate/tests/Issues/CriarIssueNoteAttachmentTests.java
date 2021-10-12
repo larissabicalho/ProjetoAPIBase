@@ -4,11 +4,9 @@ import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssue;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNote;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
+import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNoteAttachment;
+import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNoteTracking;
 import com.javarestassuredtemplate.requests.Issues.CriarIssueNoteRequest;
-import com.javarestassuredtemplate.requests.Issues.CriarIssuesRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
@@ -16,7 +14,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 
-public class CriarIssueNoteTests extends TestBase {
+public class CriarIssueNoteAttachmentTests extends TestBase {
 
     CriarIssueNoteRequest criarIssueNoteRequest;
     ValidatableResponse response;
@@ -24,7 +22,7 @@ public class CriarIssueNoteTests extends TestBase {
     GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void criarIssueNote() {
+    public void criarIssueNoteAttachment() {
         //Busca dados do usuario
         //fluxo
 
@@ -34,26 +32,32 @@ public class CriarIssueNoteTests extends TestBase {
         String idTexto = BuscarIssueDBSteps.retornaDadosTexto().get(0);
         BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
         String idIssue = BuscarIssueDBSteps.retornaDadosIssue().get(0);
-        CriarIssueNote criarIssueNote = new CriarIssueNote();
-        criarIssueNote.setDados();
+        CriarIssueNoteAttachment criarIssueNoteAttachment = new CriarIssueNoteAttachment();
+        criarIssueNoteAttachment.setDados();
         criarIssueNoteRequest  = new CriarIssueNoteRequest(idIssue);
-        criarIssueNoteRequest.setJsonBodyUsingJavaObject(criarIssueNote);
+        criarIssueNoteRequest.setJsonBodyUsingJavaObject(criarIssueNoteAttachment);
         response = criarIssueNoteRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
         response.body(
-                "note.text", equalTo(criarIssueNote.getText()),
-                "note.view_state.id", equalTo((int)criarIssueNote.getView_state().getId()),
-                "note.view_state.name", equalTo(criarIssueNote.getView_state().getName()),
-                "note.view_state.label", equalTo(criarIssueNote.getView_state().getLabel())
+                "note.text", equalTo(criarIssueNoteAttachment.getText()),
+                "note.view_state.id", equalTo((int)criarIssueNoteAttachment.getView_state().getId()),
+                "note.view_state.name", equalTo(criarIssueNoteAttachment.getView_state().getName()),
+                "note.view_state.label", equalTo(criarIssueNoteAttachment.getView_state().getLabel()),
+                "note.time_tracking.duration", equalTo(criarIssueNoteAttachment.getTime_tracking().getDuration()),
+                "issue.history.file.id[0]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornarIdAttachment()))
         );
+
 
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         String idNote = BuscarIssueDBSteps.retornarIdBugNote();
+        String idArquivo = BuscarIssueDBSteps.retornarIdAttachment();
+        BuscarIssueDBSteps.deletarAttachment(idArquivo);
         BuscarIssueDBSteps.deletarNote(idNote);
         BuscarIssueDBSteps.deletarTexto();
+
     }
 }

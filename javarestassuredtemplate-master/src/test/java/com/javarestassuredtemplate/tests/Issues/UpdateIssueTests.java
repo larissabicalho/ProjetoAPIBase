@@ -50,10 +50,10 @@ public class UpdateIssueTests extends TestBase {
         );
 
 
-
+        BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarTexto();
         BuscarUsuarioDBSteps.deletarUsuarioId(idUsuario);
-        BuscarIssueDBSteps.deletarIssue();
+
     }
 }

@@ -58,10 +58,10 @@ public class CriarIssuesAttachmentsTests extends TestBase {
                  "issue.history.message[1]", containsString("File Added:")
         );
 
+        BuscarIssueDBSteps.deletarIssue();
          BuscarIssueDBSteps.deletarCustom_Field();
          String idArquivo = BuscarIssueDBSteps.retornarIdAttachment();
          BuscarIssueDBSteps.deletarAttachment(idArquivo);
-         BuscarIssueDBSteps.deletarIssue();
          BuscarIssueDBSteps.deletarTexto();
          BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 

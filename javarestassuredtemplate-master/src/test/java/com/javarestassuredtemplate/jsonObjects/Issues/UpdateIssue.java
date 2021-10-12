@@ -22,8 +22,7 @@ public class UpdateIssue {
     public void setDados(String userName) {
         handler = new Handler();
         handler.setName(userName);
-        status = new Status();
-        status.setName(GlobalStaticParameters.statusIssue);
+        status = new Status(GlobalStaticParameters.statusIssue);
     }
 }
 

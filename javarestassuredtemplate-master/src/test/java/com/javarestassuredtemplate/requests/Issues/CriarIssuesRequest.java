@@ -5,10 +5,6 @@ import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Category;
 import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssue;
 import com.javarestassuredtemplate.jsonObjects.Project;
-import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
-import com.javarestassuredtemplate.jsonObjects.Projects.Status;
-import com.javarestassuredtemplate.jsonObjects.Projects.View_State;
-import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import io.restassured.http.Method;
 
 public class CriarIssuesRequest extends RequestRestBase {

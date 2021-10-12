@@ -2,10 +2,7 @@ package com.javarestassuredtemplate.requests.Project;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
-import com.javarestassuredtemplate.jsonObjects.Projects.Status;
 import com.javarestassuredtemplate.jsonObjects.Projects.UpdateProjeto;
-import com.javarestassuredtemplate.jsonObjects.Projects.View_State;
 import io.restassured.http.Method;
 
 public class UpdateProjetoRequest extends RequestRestBase {

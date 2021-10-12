@@ -2,11 +2,8 @@ package com.javarestassuredtemplate.requests.Issues;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Category;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssue;
 import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNote;
-import com.javarestassuredtemplate.jsonObjects.Project;
-import com.javarestassuredtemplate.jsonObjects.Projects.View_State;
+import com.javarestassuredtemplate.jsonObjects.View_State;
 import io.restassured.http.Method;
 
 public class CriarIssueNoteRequest extends RequestRestBase {
