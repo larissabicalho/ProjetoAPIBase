@@ -2,6 +2,7 @@ package com.javarestassuredtemplate.utils;
 import com.github.javafaker.Faker;
 
 import java.nio.charset.Charset;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -79,6 +80,27 @@ public class GerarDados {
     public static String sumarioIssue() {
         return "Sumario Larissa" + " " + GerarDados.getRandomString(10);
 
+    }
+
+    public static String filename() {
+        return "mantis"+GerarDados.numeroAleatorio()+".txt";
+
+    }
+
+    public static String contentFile() {
+        return "mantis"+GerarDados.getRandomString(20);
+
+    }
+
+    public static String descricaoNote() {
+        return "Descricao Larissa" + " " + GerarDados.getRandomString(10);
+
+    }
+
+    public static String gerarData() {
+
+        int i = (int) new Date().getTime();
+        return String.valueOf(i);
     }
 
 }

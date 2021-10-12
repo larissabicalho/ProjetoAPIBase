@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBUtils {
-    private static String getStringConnection(){
+    public static String getStringConnection(){
         return "jdbc:mariadb://"+
                 GlobalParameters.DB_URL +"/"+GlobalParameters.DB_NAME;//exemplo MySQL
     }

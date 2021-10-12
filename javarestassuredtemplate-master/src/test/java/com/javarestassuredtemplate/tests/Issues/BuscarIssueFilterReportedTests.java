@@ -4,8 +4,9 @@ import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssuesProjectIdRequest;
-import com.javarestassuredtemplate.requests.Issues.BuscarTodasIssuesRequest;
+import com.javarestassuredtemplate.enums.Filter;
+import com.javarestassuredtemplate.requests.Issues.BuscarIssueFilterRequest;
+import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
@@ -15,15 +16,15 @@ import java.util.ArrayList;
 import static org.hamcrest.Matchers.equalTo;
 
 
-public class BuscarTodasIssuesProjetoTests extends TestBase {
+public class BuscarIssueFilterReportedTests extends TestBase {
 
-    BuscarIssuesProjectIdRequest buscarIssuesProjectIdRequest;
+    BuscarIssueFilterRequest buscarIssueFilterRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
     GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void buscarTodasIssuesIdProjetoComSucesso() {
+    public void BuscarIssueFilterReportedComSucesso() {
         //Busca dados do usuario
         //fluxo
 
@@ -32,16 +33,13 @@ public class BuscarTodasIssuesProjetoTests extends TestBase {
         BuscarIssueDBSteps.insereTexto();
         String idTexto = BuscarIssueDBSteps.retornaDadosTexto().get(0);
         BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
-        BuscarIssueDBSteps.insereTexto();
-        String idTextoIssue2 = BuscarIssueDBSteps.retornaDadosTexto().get(0);
-        BuscarIssueDBSteps.insereIssue(idProjeto, idTextoIssue2);
-        buscarIssuesProjectIdRequest = new BuscarIssuesProjectIdRequest(idProjeto);
-        response = buscarIssuesProjectIdRequest.executeRequest();
+        buscarIssueFilterRequest = new BuscarIssueFilterRequest(String.valueOf(Filter.reported));
+        response = buscarIssueFilterRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-        ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssueIdProjeto(idProjeto);
+        ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssuesReported();
         ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
         int iiD = 0;
         int jProject = 1;
@@ -60,17 +58,20 @@ public class BuscarTodasIssuesProjetoTests extends TestBase {
 
         }
 
-      int n = 0;
+        int n = 0;
         while (n <= idsIssues.size()-3) {
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
 
-           BuscarProjetoDBSteps.deletarProjeto(idProjeto);
-
-      for(int v = 0; v < idsTexto.size(); v++) {
+        int p = 1;
+        while (p <= idsIssues.size()-2){
+            BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
+            p = p + 3;
+        }
+        for(int v = 0; v < idsTexto.size(); v++) {
             BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
-     }
+        }
 
     }
 }

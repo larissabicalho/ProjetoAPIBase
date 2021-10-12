@@ -10,6 +10,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
+import javax.management.MXBean;
 import java.lang.reflect.Method;
 
 public abstract class TestBase {

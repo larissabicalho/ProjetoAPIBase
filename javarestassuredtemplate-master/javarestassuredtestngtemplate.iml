@@ -47,7 +47,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.github.java-json-tools:jackson-coreutils:1.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.2.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:msg-simple:1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:btf:1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.fge:uri-template:0.9" level="project" />
@@ -64,6 +63,7 @@
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:android:1.23" level="project" />
     <orderEntry type="library" name="Maven: com.github.mifmif:generex:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: dk.brics.automaton:automaton:1.11-8" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.0" level="project" />
     <orderEntry type="library" name="Maven: jexcelapi:jxl:2.4.2" level="project" />
   </component>
 </module>

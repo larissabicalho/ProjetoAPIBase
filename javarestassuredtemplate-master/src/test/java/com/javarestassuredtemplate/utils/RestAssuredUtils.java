@@ -1,13 +1,25 @@
 package com.javarestassuredtemplate.utils;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.SerializerProvider;
+import com.google.gson.JsonObject;
+import io.restassured.mapper.ObjectMapper;
 import com.javarestassuredtemplate.enums.AuthenticationType;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
+import io.restassured.mapper.ObjectMapperDeserializationContext;
+import io.restassured.mapper.ObjectMapperSerializationContext;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+
+import java.io.IOException;
 import java.net.URI;
 import java.util.Map;
-
 public class RestAssuredUtils {
     public static Response executeRestRequest(String url,
                                               String requestService,

@@ -1,0 +1,1 @@
+SELECT  id,project_id,summary FROM bugtracker.mantis_bug_table where handler_id = 0 order by last_updated desc

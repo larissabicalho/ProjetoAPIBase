@@ -26,10 +26,7 @@ public class CriarProjeto {
         status.setId(GlobalStaticParameters.statusId);
         status.setName(GlobalStaticParameters.statusName);
         status.setLabel(GlobalStaticParameters.statusName);
-        view_state = new View_State();
-        view_state.setId(GlobalStaticParameters.statusId);
-        view_state.setName(GlobalStaticParameters.viewStateName);
-        view_state.setLabel(GlobalStaticParameters.viewStateName);
+        view_state = new View_State(GlobalStaticParameters.statusId, GlobalStaticParameters.viewStateName, GlobalStaticParameters.viewStateName);
     }
 
 }

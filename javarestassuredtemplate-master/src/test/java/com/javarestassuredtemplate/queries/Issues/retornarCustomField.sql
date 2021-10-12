@@ -1,0 +1,1 @@
+select id from bugtracker.mantis_custom_field_table ORDER BY id DESC LIMIT 1

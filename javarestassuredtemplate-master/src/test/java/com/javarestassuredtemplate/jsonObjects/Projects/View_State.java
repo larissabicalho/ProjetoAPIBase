@@ -7,11 +7,18 @@ import lombok.Setter;
 
     @Getter
     @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
     public class View_State {
         private long id;
         private String name;
         private String label;
 
+        public View_State(long id, String name, String label) {
+            this.id = id;
+            this.name = name;
+            this.label = label;
+        }
+
+        public View_State(String name) {
+            this.name = name;
+        }
 }

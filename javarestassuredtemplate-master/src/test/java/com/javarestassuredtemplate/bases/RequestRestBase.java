@@ -3,6 +3,8 @@ package com.javarestassuredtemplate.bases;
 import static io.restassured.RestAssured.*;
 import static io.restassured.config.JsonConfig.jsonConfig;
 import static io.restassured.path.json.config.JsonPathConfig.NumberReturnType.BIG_DECIMAL;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.javarestassuredtemplate.GlobalParameters;
 import com.javarestassuredtemplate.enums.AuthenticationType;
 import com.javarestassuredtemplate.utils.ExtentReportsUtils;

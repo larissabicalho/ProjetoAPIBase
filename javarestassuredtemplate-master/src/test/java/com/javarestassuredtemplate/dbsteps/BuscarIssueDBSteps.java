@@ -22,7 +22,18 @@ public class BuscarIssueDBSteps {
         query = query.replace("$project_id", projectId);
         query = query.replace("$bug_text_id", idTexto);
         query = query.replace("$summary",GerarDados.sumarioIssue());
-        query = query.replace("$last_updated", projectId);
+        query = query.replace("$date_submitted", GerarDados.gerarData());
+        query = query.replace("$last_updated", GerarDados.gerarData());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void insereIssueHandlerId(String projectId, String idTexto){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueHandler.sql");
+        query = query.replace("$project_id", projectId);
+        query = query.replace("$bug_text_id", idTexto);
+        query = query.replace("$summary",GerarDados.sumarioIssue());
+        query = query.replace("$date_submitted", GerarDados.gerarData());
+        query = query.replace("$last_updated", GerarDados.gerarData());
         DBUtils.getQueryResult(query);
     }
 
@@ -80,6 +91,59 @@ public class BuscarIssueDBSteps {
         String query = GeneralUtils.readFileToAString(queriesPath + "deletarTextoTodos.sql");
         query = query.replace("$idTexto", idTexto);
         DBUtils.getQueryResult(query);
+    }
+
+    public static void inserirCustom_Field(String name){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirCustomField.sql");
+        query = query.replace("$name", name);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static String  retornarCustom_FieldId(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarCustomField.sql");
+        return DBUtils.getQueryResult(query).get(0);
+    }
+
+    public static void deletarCustom_Field(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarCustomField.sql");
+        DBUtils.getQueryResult(query);
+    }
+
+    public static String retornarIdBugNote(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarIdNote.sql");
+        return DBUtils.getQueryResult(query).get(0);
+    }
+
+    public static void deletarNote(String idNote){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarBugNote.sql");
+        query = query.replace("$idNote", idNote);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static String retornarIdAttachment(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarIdAttachment.sql");
+        return DBUtils.getQueryResult(query).get(0);
+    }
+
+    public static void deletarAttachment(String idAttachment){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarAttachmentIssue.sql");
+        query = query.replace("$idAttachment", idAttachment);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static ArrayList<String> retornaDadosTodasIssuesUnassigned(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssuesUnassigned.sql");
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
+    public static ArrayList<String> retornaDadosTodasIssuesReported(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssuesReported.sql");
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
+    public static ArrayList<String> retornaDadosTodasIssuesAssigned(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssuesAssigned.sql");
+        return DBUtils.getQueryResult(queryResultado);
     }
 
 }
