@@ -120,6 +120,17 @@ public class BuscarIssueDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+    public static String retornarIdBugNoteText(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarIdNoteText.sql");
+        return DBUtils.getQueryResult(query).get(0);
+    }
+
+    public static void deletarNoteText(String idNoteText){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarBugNoteText.sql");
+        query = query.replace("$idNoteText", idNoteText);
+        DBUtils.getQueryResult(query);
+    }
+
     public static String retornarIdAttachment(){
         String query = GeneralUtils.readFileToAString(queriesPath + "retornarIdAttachment.sql");
         return DBUtils.getQueryResult(query).get(0);
@@ -144,6 +155,36 @@ public class BuscarIssueDBSteps {
     public static ArrayList<String> retornaDadosTodasIssuesAssigned(){
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssuesAssigned.sql");
         return DBUtils.getQueryResult(queryResultado);
+    }
+
+    public static ArrayList<String> retornaDadosTodasIssuesMonitored(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssuesMonitored.sql");
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
+    public static void inserirBugNoteText(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueNoteText.sql");
+        query = query.replace("$note", GerarDados.descricaoNote());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void inserirBugNote(String idBug, String idText){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueNote.sql");
+        query = query.replace("$bug_id", idBug);
+        query = query.replace("$bugnote_text_id", idText);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void inserirMonitoramento(String idIssue){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirMonitoramentoAdm.sql");
+        query = query.replace("$bug_id", idIssue);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void deletarMonitoramento(String idIssue){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarMonitored.sql");
+        query = query.replace("$bug_id", idIssue);
+        DBUtils.getQueryResult(query);
     }
 
 }

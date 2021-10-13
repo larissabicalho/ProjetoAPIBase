@@ -1,1 +1,1 @@
-INSERT INTO bugtracker.mantis_filters_table (user_id,project_id,is_public,name,filter_string) VALUES ('$user_id','$project_id',0,'$name','$filter_string')
+select id,name from bugtracker.mantis_filters_table ORDER BY id DESC LIMIT 1;

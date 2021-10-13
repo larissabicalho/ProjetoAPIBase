@@ -52,6 +52,8 @@ public class CriarIssueNoteTrackingTests extends TestBase {
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         String idNote = BuscarIssueDBSteps.retornarIdBugNote();
+        String idNoteText = BuscarIssueDBSteps.retornarIdBugNoteText();
+        BuscarIssueDBSteps.deletarNoteText(idNoteText);
         BuscarIssueDBSteps.deletarNote(idNote);
         BuscarIssueDBSteps.deletarTexto();
 

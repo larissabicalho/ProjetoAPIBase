@@ -1,1 +1,1 @@
-DELETE FROM bugtracker.mantis_bugnote_text_table where id = '$idNote'
+DELETE FROM bugtracker.mantis_bugnote_text_table where id = '$idNoteText'

@@ -54,8 +54,10 @@ public class CriarIssueNoteAttachmentTests extends TestBase {
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         String idNote = BuscarIssueDBSteps.retornarIdBugNote();
+        String idNoteText = BuscarIssueDBSteps.retornarIdBugNoteText();
         String idArquivo = BuscarIssueDBSteps.retornarIdAttachment();
         BuscarIssueDBSteps.deletarAttachment(idArquivo);
+        BuscarIssueDBSteps.deletarNoteText(idNoteText);
         BuscarIssueDBSteps.deletarNote(idNote);
         BuscarIssueDBSteps.deletarTexto();
 

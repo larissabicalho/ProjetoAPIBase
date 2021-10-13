@@ -4,11 +4,11 @@ import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import io.restassured.http.Method;
 
-public class RetornarFilterRequest extends RequestRestBase {
+public class DeletarFilterRequest extends RequestRestBase {
 
-    public RetornarFilterRequest(String filterId) {
+    public DeletarFilterRequest(String filterId) {
         requestService = "/api/rest/filters/" + filterId;
-        method = Method.GET;
+        method = Method.DELETE;
         headers.put("Authorization", GlobalStaticParameters.token);
         headers.put("Content-Type", "application/json");
     }

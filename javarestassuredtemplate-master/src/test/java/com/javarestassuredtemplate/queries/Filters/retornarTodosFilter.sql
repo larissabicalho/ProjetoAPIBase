@@ -1,1 +1,1 @@
-select id,name from bugtracker.mantis_filters_table ORDER BY id DESC LIMIT 1;
+select id,name,project_id from bugtracker.mantis_filters_table order by name

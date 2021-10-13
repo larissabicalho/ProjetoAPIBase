@@ -1,1 +1,1 @@
-SELECT  id,project_id,summary FROM bugtracker.mantis_bug_table where handler_id = 1 order by last_updated desc
+INSERT INTO bugtracker.mantis_bug_monitor_table(user_id,bug_id) VALUES (1,'$bug_id')

@@ -98,9 +98,19 @@ public class GerarDados {
     }
 
     public static String gerarData() {
-
         int i = (int) new Date().getTime();
         return String.valueOf(i);
+    }
+
+    public static String filterName() {
+        return "Filter Larissa" + " " + GerarDados.getRandomString(10);
+
+    }
+
+    public static String filter_String() {
+       String parte1 = GeneralUtils.readFileToAString("src/test/java/com/javarestassuredtemplate/jsons/filter_string.json");
+        return "v9#" +parte1 ;
+
     }
 
 }

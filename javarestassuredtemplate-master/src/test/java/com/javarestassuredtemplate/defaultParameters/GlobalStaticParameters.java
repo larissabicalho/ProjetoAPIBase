@@ -50,6 +50,9 @@ public class GlobalStaticParameters {
     //issuenotes
     public static String time = "00:30";
 
+    //filter
+    public static String user = "1";
+
 
 }
 
