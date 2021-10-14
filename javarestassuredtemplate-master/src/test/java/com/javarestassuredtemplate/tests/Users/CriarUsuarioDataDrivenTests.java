@@ -2,7 +2,7 @@ package com.javarestassuredtemplate.tests.Users;
 import java.io.File;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
+import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuarioDataDriven;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
@@ -10,8 +10,6 @@ import jxl.Sheet;
 import jxl.Workbook;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class CriarUsuarioDataDrivenTests extends TestBase {

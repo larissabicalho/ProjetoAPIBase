@@ -1,0 +1,1 @@
+select mbt.id,mbt.project_id, mbt.summary from  bugtracker.mantis_bug_table mbt join bugtracker.mantis_bug_monitor_table mbmt on mbmt.user_id = mbt.reporter_id and mbmt.bug_id  = mbt.id  where mbt.id ='$bug_id' order by mbt.id desc

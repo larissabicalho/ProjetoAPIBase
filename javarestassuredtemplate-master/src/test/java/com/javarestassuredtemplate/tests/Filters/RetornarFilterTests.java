@@ -2,16 +2,9 @@ package com.javarestassuredtemplate.tests.Filters;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarFilterDBSteps;
-import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import com.javarestassuredtemplate.requests.Filters.RetornarFilterRequest;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueFilterRequest;
-import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
-import com.javarestassuredtemplate.requests.Users.DeletarUsuarioRequest;
-import com.javarestassuredtemplate.requests.Users.RetornarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;

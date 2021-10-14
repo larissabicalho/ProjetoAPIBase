@@ -39,6 +39,11 @@ public class BuscarUsuarioDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+    public static ArrayList<String> retornaUsuarioMonitor(){
+        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarUsuarioMonitorIssue.sql");
+        return DBUtils.getQueryResult(queryResultado);
+    }
+
     public static String retornaUsernameUsuario(){
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarUsuarioUpdateIssue.sql");
         return DBUtils.getQueryResult(queryResultado).get(0);

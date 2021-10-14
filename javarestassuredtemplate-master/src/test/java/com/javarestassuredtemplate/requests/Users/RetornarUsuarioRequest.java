@@ -2,7 +2,6 @@ package com.javarestassuredtemplate.requests.Users;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import io.restassured.http.Method;
 
 public class RetornarUsuarioRequest extends RequestRestBase {

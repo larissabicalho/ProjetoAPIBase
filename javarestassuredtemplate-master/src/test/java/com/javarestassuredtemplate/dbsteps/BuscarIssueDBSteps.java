@@ -187,4 +187,10 @@ public class BuscarIssueDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+    public static ArrayList<String> retornarIssueMonitor(String idIssue){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarDadosIssuesMonitor.sql");
+        query = query.replace("$bug_id", idIssue);
+       return  DBUtils.getQueryResult(query);
+    }
+
 }
