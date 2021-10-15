@@ -1,0 +1,1 @@
+select id,project_id,summary from bugtracker.mantis_bug_table where priority = 50 order by last_updated desc

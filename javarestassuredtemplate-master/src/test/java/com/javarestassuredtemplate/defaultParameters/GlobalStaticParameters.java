@@ -53,6 +53,15 @@ public class GlobalStaticParameters {
     //filter
     public static String user = "1";
 
+    //relationships
+
+    public static String nameRelationships = "related-to";
+
+    public static String message = "Relationship added";
+
+  // filters
+    public static int priority = 50;
+
 
 }
 

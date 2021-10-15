@@ -1,0 +1,1 @@
+INSERT INTO bugtracker.mantis_filters_table (user_id,project_id,is_public,name,filter_string) VALUES (1,0,0,'$name','$filter_string')

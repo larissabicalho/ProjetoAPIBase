@@ -31,6 +31,7 @@ public class BuscarFilterDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+
     public static ArrayList<String> retornarIdNameTodosFilter(){
         String query = GeneralUtils.readFileToAString(queriesPath + "retornarTodosFilter.sql");
         return DBUtils.getQueryResult(query);

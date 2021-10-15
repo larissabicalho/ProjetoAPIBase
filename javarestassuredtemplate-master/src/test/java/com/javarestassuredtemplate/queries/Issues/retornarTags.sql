@@ -1,0 +1,1 @@
+select id,name from bugtracker.mantis_tag_table ORDER BY date_created,name LIMIT 3

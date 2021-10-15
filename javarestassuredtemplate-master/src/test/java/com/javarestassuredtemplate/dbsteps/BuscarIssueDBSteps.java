@@ -193,4 +193,75 @@ public class BuscarIssueDBSteps {
        return  DBUtils.getQueryResult(query);
     }
 
+    public static void insereTag(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirTags.sql");
+        query = query.replace("$name", GerarDados.tagName());
+        query = query.replace("$description", GerarDados.descricaoNote());
+        query = query.replace("$date_created", GerarDados.gerarData());
+        query = query.replace("$date_updated", GerarDados.gerarData());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static ArrayList<String> retornarTags(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarTags.sql");
+        return  DBUtils.getQueryResult(query);
+    }
+
+    public static void deletarTags(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarTags.sql");
+         DBUtils.getQueryResult(query);
+    }
+
+    public static void deletarRelationship(String idIssue){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletaRelationships.sql");
+        query = query.replace("$source_bug_id", idIssue);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void inserirRelationship(String idIssue, String idIssue2){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirRelationships.sql");
+        query = query.replace("$source_bug_id", idIssue);
+        query = query.replace("$destination_bug_id", idIssue2);
+        DBUtils.getQueryResult(query);
+    }
+
+    public static String retornarRelationship(String idIssue){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarRelationships.sql");
+        query = query.replace("$source_bug_id", idIssue);
+       return DBUtils.getQueryResult(query).get(0);
+    }
+
+    public static void insereFilterUrgente(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirFilterUrgente.sql");
+        query = query.replace("$name", GerarDados.filterName());
+        query = query.replace("$filter_string", GerarDados.filter_StringUrgente());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void insereIssueUrgente(String projectId, String idTexto){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueUrgente.sql");
+        query = query.replace("$project_id", projectId);
+        query = query.replace("$bug_text_id", idTexto);
+        query = query.replace("$summary",GerarDados.sumarioIssue());
+        query = query.replace("$date_submitted", GerarDados.gerarData());
+        query = query.replace("$last_updated", GerarDados.gerarData());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static void insereIssueUrgente2(String projectId, String idTexto){
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueUrgente.sql");
+        query = query.replace("$project_id", projectId);
+        query = query.replace("$bug_text_id", idTexto);
+        query = query.replace("$summary",GerarDados.sumarioIssue());
+        query = query.replace("$date_submitted", GerarDados.gerarData2());
+        query = query.replace("$last_updated", GerarDados.gerarData2());
+        DBUtils.getQueryResult(query);
+    }
+
+    public static ArrayList<String> retornarIssueFilter(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarDadosIssueFilter.sql");
+        return  DBUtils.getQueryResult(query);
+    }
+
+
 }

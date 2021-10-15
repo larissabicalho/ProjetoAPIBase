@@ -3,6 +3,7 @@ import com.github.javafaker.Faker;
 
 import java.nio.charset.Charset;
 import java.sql.Timestamp;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -98,9 +99,16 @@ public class GerarDados {
     }
 
     public static String gerarData() {
-        int i = (int) new Date().getTime();
+        int i = (int) (new Date().getTime()/1000);
         return String.valueOf(i);
     }
+
+    public static String gerarData2() {
+        int i = (int) (new Date().getTime()+0000.1/1000);
+        return String.valueOf(i);
+    }
+
+
 
     public static String filterName() {
         return "Filter Larissa" + " " + GerarDados.getRandomString(10);
@@ -110,6 +118,17 @@ public class GerarDados {
     public static String filter_String() {
        String parte1 = GeneralUtils.readFileToAString("src/test/java/com/javarestassuredtemplate/jsons/filter_string.json");
         return "v9#" +parte1 ;
+
+    }
+
+    public static String filter_StringUrgente() {
+        String parte1 = GeneralUtils.readFileToAString("src/test/java/com/javarestassuredtemplate/jsons/filter_stringUrgente.json");
+        return "v9#" +parte1 ;
+
+    }
+
+    public static String tagName() {
+        return "Tag Larissa" + " " + GerarDados.getRandomString(10);
 
     }
 
