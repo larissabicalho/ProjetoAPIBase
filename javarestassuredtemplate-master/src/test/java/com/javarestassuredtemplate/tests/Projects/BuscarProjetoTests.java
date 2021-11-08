@@ -46,4 +46,27 @@ public class BuscarProjetoTests extends TestBase {
 
     }
 
+    @Test
+    public void buscarProjetoComSucesso(){
+        //Busca dados do usuario
+        //fluxo
+
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
+        buscarProjetoRequest = new BuscarProjetoRequest(idProjeto);
+        response = buscarProjetoRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperado);
+
+        response.body(
+                "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
+                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
+                "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
+        );
+
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+
+    }
+
 }

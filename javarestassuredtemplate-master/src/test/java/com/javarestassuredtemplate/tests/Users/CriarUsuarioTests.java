@@ -18,7 +18,9 @@ public class CriarUsuarioTests extends TestBase {
     CriarUsuarioRequest criarUsuarioRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
+    int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
     GlobalStaticParameters globalStaticParameters;
+    String messagemErro = "Username 'administrator' already used.";
 
     @Test
     public void criarUsuarioSucesso(){
@@ -40,6 +42,25 @@ public class CriarUsuarioTests extends TestBase {
 
         String idUsuario = BuscarUsuarioDBSteps.retornaIdUsuario();
         BuscarUsuarioDBSteps.deletarUsuarioId(idUsuario);
+
+    }
+
+    @Test
+    public void criarUsuarioErro(){
+        //Busca dados do usuario
+        CriarUsuario criarUsuario = new CriarUsuario();
+        //fluxo
+        criarUsuarioRequest = new CriarUsuarioRequest();
+        criarUsuario.setUsername("administrator");
+        criarUsuarioRequest.setJsonBodyUsingJavaObject(criarUsuario);
+        response = criarUsuarioRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperadoErro);
+
+        response.body(
+                "message", equalTo(messagemErro)
+        );
 
     }
 

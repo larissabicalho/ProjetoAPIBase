@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class GlobalStaticParameters {
     //usersParameteres
     public static String password = "abc123";
-    public static String token = "pE9b38G5lKIWus6BKsVJ87t-2w2gLqaj";
+    public static String token = "04alsw4AlRg_yj5pCVY0ig3Ryf9xc-SG";
 
     //projectsParameteres
     public static String file_path = "/temp";
@@ -59,9 +59,12 @@ public class GlobalStaticParameters {
 
     public static String message = "Relationship added";
 
-  // filters
+    //filters
     public static int priority = 50;
 
+    //deletarUsuario
+
+    public static String idUsuario = "00X";
 
 }
 
