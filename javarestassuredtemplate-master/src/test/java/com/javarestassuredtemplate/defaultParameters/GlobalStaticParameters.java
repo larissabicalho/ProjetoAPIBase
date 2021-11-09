@@ -66,5 +66,20 @@ public class GlobalStaticParameters {
 
     public static String idUsuario = "00X";
 
+    //deletarProjeto
+
+    public static String idProjeto = "11x";
+
+    //idFilter
+    public static String idFilter = "22x";
+
+    //Config
+    public static String config = "ccc";
+
+    //idIssue
+    public static String idIssue = "000233";
+
+    public static String idProjetoDelete = "xxx";
+
 }
 

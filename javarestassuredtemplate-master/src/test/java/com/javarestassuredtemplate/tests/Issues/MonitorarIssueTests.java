@@ -51,4 +51,5 @@ public class MonitorarIssueTests extends TestBase {
         BuscarIssueDBSteps.deletarIssueId(idIssue);
         BuscarIssueDBSteps.deletarTextoId(idTexto);
     }
+
 }

@@ -25,6 +25,8 @@ public class AddAttachmentIssueTests extends TestBase {
     AttachFileIssuesRequest attachFileIssuesRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
+    int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
+    String mensagemErro = "HTTP/1.1 404 Issue #233 not found";
     GlobalStaticParameters globalStaticParameters;
 
     @Test
@@ -48,6 +50,29 @@ public class AddAttachmentIssueTests extends TestBase {
         BuscarIssueDBSteps.deletarIssue();
         String idArquivo = BuscarIssueDBSteps.retornarIdAttachment();
         BuscarIssueDBSteps.deletarAttachment(idArquivo);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarIssueDBSteps.deletarTexto();
+
+    }
+
+    @Test
+    public void addFileComErro() throws IOException, SQLException {
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
+        BuscarIssueDBSteps.insereTexto();
+        String idTexto = BuscarIssueDBSteps.retornaDadosTexto().get(0);
+        BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
+        String idIssue = GlobalStaticParameters.idIssue;
+        AddAttachment addAttachment = new AddAttachment();
+        addAttachment.setDados();
+        attachFileIssuesRequest = new AttachFileIssuesRequest(idIssue);
+        attachFileIssuesRequest.setJsonBodyUsingJavaObject(addAttachment);
+        response = attachFileIssuesRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperadoErro);
+        response.statusLine(mensagemErro);
+        BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarTexto();
 

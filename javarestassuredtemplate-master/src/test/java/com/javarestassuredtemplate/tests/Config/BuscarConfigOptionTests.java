@@ -37,4 +37,20 @@ public class BuscarConfigOptionTests extends TestBase {
 
     }
 
+    @Test
+    public void buscarConfigComErro(){
+        //Busca dados do usuario
+        //fluxo
+        configOptionProjetoRequest = new ConfigOptionProjetoRequest(GlobalStaticParameters.config);
+        response = configOptionProjetoRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperado);
+
+        response.body(
+                "configs[0].option", equalTo(null)
+        );
+
+    }
+
 }

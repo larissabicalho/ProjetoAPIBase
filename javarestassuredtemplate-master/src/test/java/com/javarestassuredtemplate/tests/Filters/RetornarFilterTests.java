@@ -44,5 +44,25 @@ public class RetornarFilterTests extends TestBase {
 
     }
 
+    @Test
+    public void retornarFilterComErro() {
+        //Busca dados do usuario
+        //fluxo
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
+        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user,idProjeto);
+        String filterId = GlobalStaticParameters.idFilter;
+        retornarFilterRequest = new RetornarFilterRequest(filterId);
+        response = retornarFilterRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperado);
+        response.body(
+                "filters.name[0]", equalTo(null)
+        );
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+
+    }
+
 
 }

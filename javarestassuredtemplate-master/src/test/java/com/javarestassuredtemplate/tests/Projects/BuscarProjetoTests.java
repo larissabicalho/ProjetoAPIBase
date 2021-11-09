@@ -11,6 +11,7 @@ import com.javarestassuredtemplate.utils.GeneralUtils;
 import com.javarestassuredtemplate.utils.GerarDados;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -21,7 +22,9 @@ public class BuscarProjetoTests extends TestBase {
     BuscarProjetoRequest buscarProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
+    int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
     GlobalStaticParameters globalStaticParameters;
+    String mensagemErro = "404 Project #11 not found";
 
     @Test
     public void buscarProjetoComSucesso(){
@@ -38,8 +41,7 @@ public class BuscarProjetoTests extends TestBase {
 
        response.body(
                 "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
-                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
-                "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
+                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1))
         );
 
           BuscarProjetoDBSteps.deletarProjeto(idProjeto);
@@ -47,25 +49,24 @@ public class BuscarProjetoTests extends TestBase {
     }
 
     @Test
-    public void buscarProjetoComSucesso(){
+    public void buscarProjetoComErro(){
         //Busca dados do usuario
         //fluxo
-
-        BuscarProjetoDBSteps.insereProjeto();
-        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
+        String idProjeto = GlobalStaticParameters.idProjeto;
         buscarProjetoRequest = new BuscarProjetoRequest(idProjeto);
         response = buscarProjetoRequest.executeRequest();
         //Validações
         response.log().all();
-        response.statusCode(statusCodeEsperado);
+        response.statusCode(statusCodeEsperadoErro);
+        response.statusLine(Matchers.containsString(mensagemErro));
 
-        response.body(
+       /* response.body(
                 "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
                 "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
                 "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
         );
 
-        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+*/
 
     }
 

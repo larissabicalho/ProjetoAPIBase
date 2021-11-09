@@ -18,7 +18,9 @@ public class BuscarIssueTests extends TestBase {
     BuscarIssueRequest buscarIssueRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
+    int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
     GlobalStaticParameters globalStaticParameters;
+    String mensagemErro = "HTTP/1.1 404 Issue #233 not found";
 
     @Test
     public void buscarIssueComSucesso() {
@@ -43,6 +45,29 @@ public class BuscarIssueTests extends TestBase {
                 "issues.project.id[0]", equalTo(Integer.valueOf(idProjeto))
         );
 
+
+        BuscarIssueDBSteps.deletarIssue();
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarIssueDBSteps.deletarTexto();
+    }
+
+    @Test
+    public void buscarIssueComErro() {
+        //Busca dados do usuario
+        //fluxo
+
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
+        BuscarIssueDBSteps.insereTexto();
+        String idTexto = BuscarIssueDBSteps.retornaDadosTexto().get(0);
+        BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
+        String idIssue = GlobalStaticParameters.idIssue;
+        buscarIssueRequest = new BuscarIssueRequest(idIssue);
+        response = buscarIssueRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperadoErro);
+        response.statusLine(mensagemErro);
 
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);

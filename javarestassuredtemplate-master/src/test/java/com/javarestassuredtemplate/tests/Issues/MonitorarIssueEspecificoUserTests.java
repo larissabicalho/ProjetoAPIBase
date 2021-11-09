@@ -27,7 +27,6 @@ public class MonitorarIssueEspecificoUserTests extends TestBase {
         //fluxo
 
         BuscarUsuarioDBSteps.insereUsuario();
-        String idUsuario = BuscarUsuarioDBSteps.retornaUsernameUsuario();
 
         BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);

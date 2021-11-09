@@ -2,6 +2,7 @@ package com.javarestassuredtemplate.tests.Projects;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
+import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.SubProject;
 import com.javarestassuredtemplate.jsonObjects.Projects.VersionProject;
 import com.javarestassuredtemplate.requests.Project.CriarSubProjetoRequest;
@@ -18,6 +19,8 @@ public class CriarVersionProjetoTests extends TestBase {
     CriarVersaoProjetoRequest criarVersaoProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
+    int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
+    String mensagemErro = "HTTP/1.1 400 'project_id' must be numeric";
 
     @Test
     public void criarVersaoProjetoComSucesso(){
@@ -33,15 +36,23 @@ public class CriarVersionProjetoTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperado);
         response.statusLine(containsString("Version created"));
-       // response.contentType("Subproject '"+projectIdSub+"' added to project '"+idProjeto+"'");
-
-     /*  response.body(
-                "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
-                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
-                "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
-        );
-  */
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+    }
+
+    @Test
+    public void criarVersaoProjetoComErro(){
+        //Busca dados do usuario
+        //fluxo
+        BuscarProjetoDBSteps.insereProjeto();
+        String idProjeto = GlobalStaticParameters.idProjeto;
+        VersionProject versionProject = new VersionProject();
+        CriarVersaoProjetoRequest criarVersaoProjetoRequest = new CriarVersaoProjetoRequest(idProjeto);
+        criarVersaoProjetoRequest.setJsonBodyUsingJavaObject(versionProject);
+        response = criarVersaoProjetoRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperadoErro);
+        response.statusLine(mensagemErro);
     }
 
 }

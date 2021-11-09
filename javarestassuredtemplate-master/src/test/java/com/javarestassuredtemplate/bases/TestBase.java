@@ -1,16 +1,13 @@
 package com.javarestassuredtemplate.bases;
 
 import com.javarestassuredtemplate.GlobalParameters;
-import com.javarestassuredtemplate.steps.AutenticacaoSteps;
 import com.javarestassuredtemplate.utils.ExtentReportsUtils;
-import org.codehaus.groovy.transform.tailrec.GotoRecurHereException;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import javax.management.MXBean;
 import java.lang.reflect.Method;
 
 public abstract class TestBase {

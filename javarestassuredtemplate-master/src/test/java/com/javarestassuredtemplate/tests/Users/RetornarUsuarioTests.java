@@ -16,10 +16,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class RetornarUsuarioTests extends TestBase {
 
-    DeletarUsuarioRequest deletarUsuarioRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void retornarAdmComSucesso(){

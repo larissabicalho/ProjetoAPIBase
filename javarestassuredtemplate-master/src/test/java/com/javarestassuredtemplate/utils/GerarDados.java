@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 public class GerarDados {
-    private static final Locale LOCALE = new Locale("pt-BR");
+    private static final Locale LOCALE = new Locale("en","US");
 
     public static String nomeUser(){
         Faker faker = new Faker(LOCALE);
