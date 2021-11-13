@@ -1,0 +1,33 @@
+db: 
+  environment: 
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=bugtracker
+    - MYSQL_USER=mantisbt
+    - MYSQL_PASSWORD=mantisbt
+  image: mariadb
+  ports: 
+    - "3306:3306"
+  restart: always
+
+mantisbt: 
+  image: "vimagick/mantisbt:latest"
+  links: 
+    - db
+  ports: 
+    - "8989:80"
+  restart: always
+
+jenkins:
+    image: jenkins-maven
+    privileged: true
+    user: root
+    ports:
+     - "8081:8080"
+     - "50000:50000"
+    container_name: jenkins
+    volumes:
+        - ~/jenkins:/var/jenkins_home
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /usr/local/bin/docker:/usr/local/bin/docker
+    
+  
