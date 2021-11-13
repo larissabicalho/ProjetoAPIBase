@@ -28,7 +28,6 @@ public class RetornarFiltersTodosTests extends TestBase {
         BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
         BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user,idProjeto);
-        String filterId = BuscarFilterDBSteps.retornarIdNameFilter().get(0);
         ArrayList<String> idsFilters =  BuscarFilterDBSteps.retornarIdNameTodosFilter();
         retornarFilterTodosRequest = new RetornarFilterTodosRequest();
         response = retornarFilterTodosRequest.executeRequest();

@@ -50,7 +50,6 @@ public class RetornarFilterTests extends TestBase {
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
-        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user,idProjeto);
         String filterId = GlobalStaticParameters.idFilter;
         retornarFilterRequest = new RetornarFilterRequest(filterId);
         response = retornarFilterRequest.executeRequest();
