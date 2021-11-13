@@ -2,7 +2,6 @@ package com.javarestassuredtemplate.tests.Users;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
@@ -19,7 +18,6 @@ public class CriarUsuarioTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
     int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
-    GlobalStaticParameters globalStaticParameters;
     String messagemErro = "Username 'administrator' already used.";
 
     @Test
@@ -28,6 +26,7 @@ public class CriarUsuarioTests extends TestBase {
         CriarUsuario criarUsuario = new CriarUsuario();
         //fluxo
         criarUsuarioRequest = new CriarUsuarioRequest();
+        criarUsuario.setDados();
         criarUsuarioRequest.setJsonBodyUsingJavaObject(criarUsuario);
         response = criarUsuarioRequest.executeRequest();
         //Validações
@@ -61,6 +60,30 @@ public class CriarUsuarioTests extends TestBase {
         response.body(
                 "message", equalTo(messagemErro)
         );
+
+    }
+
+    @Test
+    public void criarUsuarioSucessoJavascript(){
+        //Busca dados do usuario
+        CriarUsuario criarUsuario = new CriarUsuario();
+        //fluxo
+        criarUsuarioRequest = new CriarUsuarioRequest();
+        criarUsuario.setDadosJavascript();
+        criarUsuarioRequest.setJsonBodyUsingJavaObject(criarUsuario);
+        response = criarUsuarioRequest.executeRequest();
+        //Validações
+        response.log().all();
+        response.statusCode(statusCodeEsperado);
+
+        response.body(
+                "user.name", equalTo(criarUsuario.getUsername()),
+                "user.real_name", equalTo(criarUsuario.getReal_name()),
+                "user.email", equalTo(criarUsuario.getEmail())
+        );
+
+        String idUsuario = BuscarUsuarioDBSteps.retornaIdUsuario();
+        BuscarUsuarioDBSteps.deletarUsuarioId(idUsuario);
 
     }
 

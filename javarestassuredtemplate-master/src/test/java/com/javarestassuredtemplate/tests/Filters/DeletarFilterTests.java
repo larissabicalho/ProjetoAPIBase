@@ -9,8 +9,6 @@ import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.Matchers.equalTo;
-
 
 public class DeletarFilterTests extends TestBase {
 

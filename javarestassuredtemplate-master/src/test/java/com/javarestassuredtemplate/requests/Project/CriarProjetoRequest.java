@@ -3,7 +3,9 @@ package com.javarestassuredtemplate.requests.Project;
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
+import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjetoDataDriven;
 import com.javarestassuredtemplate.jsonObjects.Status;
+import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuarioDataDriven;
 import com.javarestassuredtemplate.jsonObjects.View_State;
 import io.restassured.http.Method;
 
@@ -42,4 +44,8 @@ public class CriarProjetoRequest extends RequestRestBase {
         jsonBody = jsonObject;
     }
 
+    public void setJsonBodyUsingJavaObject(CriarProjetoDataDriven criarProjetoDataDriven) {
+        jsonBody = criarProjetoDataDriven;
+
+    }
 }

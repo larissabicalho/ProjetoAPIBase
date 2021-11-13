@@ -2,7 +2,6 @@ package com.javarestassuredtemplate.tests.Users;
 import java.io.File;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuarioDataDriven;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
@@ -15,7 +14,6 @@ import org.testng.annotations.Test;
 public class CriarUsuarioDataDrivenTests extends TestBase {
     CriarUsuarioRequest criarUsuarioRequest;
     ValidatableResponse response;
-    GlobalStaticParameters globalStaticParameters;
         @DataProvider
         public Object[][] ProvideData() throws Exception{
             //open excel file

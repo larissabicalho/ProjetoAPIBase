@@ -4,7 +4,6 @@ import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarFilterDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Filters.RetornarFilterRequest;
 import com.javarestassuredtemplate.requests.Filters.RetornarFilterTodosRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;

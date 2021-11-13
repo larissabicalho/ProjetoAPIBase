@@ -1,0 +1,1 @@
+DELETE FROM bugtracker.mantis_project_table where id<>1 ORDER BY id DESC LIMIT 9

@@ -16,7 +16,8 @@ public class ExtentReportsUtils {
     public static ExtentReports EXTENT_REPORT = null;
     public static ExtentTest TEST;
     public static ExtentHtmlReporter HTML_REPORTER = null;
-    static String reportName = GlobalParameters.REPORT_NAME + "_" + GeneralUtils.getNowDate("yyyy-MM-dd_HH-mm-ss");
+   // static String reportName = GlobalParameters.REPORT_NAME + "_" + GeneralUtils.getNowDate("yyyy-MM-dd_HH-mm-ss");
+    static String reportName = GlobalParameters.REPORT_NAME;
     static String reportsPath = GlobalParameters.REPORT_PATH;
     static String fileName = reportName + ".html";
     static String fullReportFilePath = reportsPath + "/" + reportName + "/" + fileName;

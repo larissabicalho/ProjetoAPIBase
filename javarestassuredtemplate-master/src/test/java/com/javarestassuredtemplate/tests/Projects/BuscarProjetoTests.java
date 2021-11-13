@@ -2,13 +2,8 @@ package com.javarestassuredtemplate.tests.Projects;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
 import com.javarestassuredtemplate.requests.Project.BuscarProjetoRequest;
-import com.javarestassuredtemplate.requests.Users.DeletarUsuarioRequest;
-import com.javarestassuredtemplate.utils.GeneralUtils;
-import com.javarestassuredtemplate.utils.GerarDados;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
@@ -23,7 +18,6 @@ public class BuscarProjetoTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    GlobalStaticParameters globalStaticParameters;
     String mensagemErro = "404 Project #11 not found";
 
     @Test

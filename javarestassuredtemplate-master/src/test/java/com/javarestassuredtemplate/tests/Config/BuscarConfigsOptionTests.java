@@ -3,7 +3,6 @@ package com.javarestassuredtemplate.tests.Config;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.enums.Options;
-import com.javarestassuredtemplate.requests.Config.ConfigOptionProjetoRequest;
 import com.javarestassuredtemplate.requests.Config.ConfigOptionsProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;

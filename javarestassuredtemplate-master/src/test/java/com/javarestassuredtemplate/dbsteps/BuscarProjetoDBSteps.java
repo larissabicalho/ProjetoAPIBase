@@ -48,4 +48,10 @@ public class BuscarProjetoDBSteps {
         return DBUtils.getQueryResult(queryResultado);
     }
 
+    public static void deletarProjetoDD(){
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarProjetoDD.sql");
+        DBUtils.getQueryResult(query);
+    }
+
+
 }

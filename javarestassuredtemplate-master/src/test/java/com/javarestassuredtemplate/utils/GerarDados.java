@@ -11,9 +11,14 @@ import java.util.Random;
 public class GerarDados {
     private static final Locale LOCALE = new Locale("en","US");
 
+
     public static String nomeUser(){
         Faker faker = new Faker(LOCALE);
         return faker.name().firstName();
+    }
+
+    public static String nomeUserJavascript(){
+        return "user"+gerarDadosComJavaScript();
     }
     public static String fullName(){
         Faker faker = new Faker(LOCALE);
@@ -32,6 +37,11 @@ public class GerarDados {
 
     public static String nomeProjeto () {
         return "Projeto Teste Larissa" + " " + GerarDados.getRandomString(3) + GerarDados.numeroAleatorio();
+
+    }
+
+    public static String nomeProjetoJavascript() {
+        return "Projeto Teste Larissa" + " " + GerarDados.gerarDadosComJavaScript();
 
     }
 
@@ -130,6 +140,10 @@ public class GerarDados {
     public static String tagName() {
         return "Tag Larissa" + " " + GerarDados.getRandomString(10);
 
+    }
+
+    public static String gerarDadosComJavaScript(){
+       return  ExecutarJavaScriptNode.executaJavaScript();
     }
 
 }

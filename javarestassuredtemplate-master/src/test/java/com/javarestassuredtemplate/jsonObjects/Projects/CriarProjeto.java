@@ -15,7 +15,7 @@ import lombok.Setter;
 public class CriarProjeto {
 
     private long id;
-    private String name = GerarDados.nomeProjeto();
+    private String name;
     private Status status;
     private String description = GlobalStaticParameters.description;
     private boolean enabled = GlobalStaticParameters.enabled;
@@ -24,6 +24,13 @@ public class CriarProjeto {
 
 
     public void setDados() {
+        name = GerarDados.nomeProjeto();
+        status = new Status(GlobalStaticParameters.statusId,GlobalStaticParameters.statusName,GlobalStaticParameters.statusName);
+        view_state = new View_State(GlobalStaticParameters.statusId, GlobalStaticParameters.viewStateName, GlobalStaticParameters.viewStateName);
+    }
+
+    public void setDadosJavaScript() {
+        name = GerarDados.nomeProjeto();
         status = new Status(GlobalStaticParameters.statusId,GlobalStaticParameters.statusName,GlobalStaticParameters.statusName);
         view_state = new View_State(GlobalStaticParameters.statusId, GlobalStaticParameters.viewStateName, GlobalStaticParameters.viewStateName);
     }
