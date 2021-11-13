@@ -16,8 +16,7 @@ public class DeletarFilterTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    GlobalStaticParameters globalStaticParameters;
-    String mensagemErro = "HTTP/1.1 404 Filter not found";
+    String mensagemErroFilter = GlobalStaticParameters.mensagemErroFilter;
 
     @Test
     public void deletarFilterComSucesso() {
@@ -25,7 +24,7 @@ public class DeletarFilterTests extends TestBase {
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
-        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user,idProjeto);
+        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user, idProjeto);
         String filterId = BuscarFilterDBSteps.retornarIdNameFilter().get(0);
         deletarFilterRequest = new DeletarFilterRequest(filterId);
         response = deletarFilterRequest.executeRequest();
@@ -49,12 +48,11 @@ public class DeletarFilterTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(mensagemErro);
+        response.statusLine(mensagemErroFilter);
 
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
     }
-
 
 
 }

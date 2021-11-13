@@ -19,7 +19,6 @@ public class MonitorarIssueEspecificoUserTests extends TestBase {
     MonitorarIssueRequest monitorarIssueRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void BuscarIssueFilterMonitoredComSucesso() {
@@ -35,7 +34,7 @@ public class MonitorarIssueEspecificoUserTests extends TestBase {
         BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
         String idIssue = BuscarIssueDBSteps.retornaDadosIssue().get(0);
         MonitorEspecificoUser monitorEspecificoUser = new MonitorEspecificoUser();
-        monitorEspecificoUser.setDados(BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(0),BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(1));
+        monitorEspecificoUser.setDados(BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(0), BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(1));
         monitorarIssueRequest = new MonitorarIssueRequest(idIssue);
         monitorarIssueRequest.setJsonBodyUsingJavaObject(monitorEspecificoUser);
         response = monitorarIssueRequest.executeRequest();
@@ -46,7 +45,7 @@ public class MonitorarIssueEspecificoUserTests extends TestBase {
         response.body(
                 "issues.id[0]", equalTo(Integer.valueOf(idIssue)),
                 "issues.monitors[0].name[0]", equalTo(BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(0)),
-                "issues.monitors[0].real_name[0]",  equalTo(BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(1))
+                "issues.monitors[0].real_name[0]", equalTo(BuscarUsuarioDBSteps.retornaUsuarioMonitor().get(1))
         );
 
         BuscarIssueDBSteps.deletarMonitoramento(idIssue);

@@ -2,15 +2,11 @@ package com.javarestassuredtemplate.tests.Projects;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.SubProject;
-import com.javarestassuredtemplate.requests.Project.BuscarProjetoRequest;
-import com.javarestassuredtemplate.requests.Project.CriarSubProjetoRequest;
+import com.javarestassuredtemplate.requests.Projects.CriarSubProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
 
 import static org.hamcrest.Matchers.*;
 
@@ -22,7 +18,7 @@ public class CriarSubProjetoTests extends TestBase {
     int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
 
     @Test
-    public void criarSubProjetoComSucesso(){
+    public void criarSubProjetoComSucesso() {
         //Busca dados do usuario
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
@@ -38,13 +34,12 @@ public class CriarSubProjetoTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
-        response.statusLine(containsString("Subproject '"+projectIdSub+"' added to project '"+idProjeto+"'"));
+        response.statusLine(containsString("Subproject '" + projectIdSub + "' added to project '" + idProjeto + "'"));
 
-         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
-         BuscarProjetoDBSteps.deletarProjeto(projectIdSub);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarProjetoDBSteps.deletarProjeto(projectIdSub);
 
     }
-
 
 
 }

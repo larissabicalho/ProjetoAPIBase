@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class AddAttachmentIssueTests extends TestBase {
@@ -23,8 +22,7 @@ public class AddAttachmentIssueTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    String mensagemErro = "HTTP/1.1 404 Issue #233 not found";
-    GlobalStaticParameters globalStaticParameters;
+    String mensagemErroAttachment = GlobalStaticParameters.mensagemErroAttachment;
 
     @Test
     public void addFileComSucesso() throws IOException, SQLException {
@@ -68,7 +66,7 @@ public class AddAttachmentIssueTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(mensagemErro);
+        response.statusLine(mensagemErroAttachment);
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarTexto();

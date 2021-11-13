@@ -81,5 +81,16 @@ public class GlobalStaticParameters {
 
     public static String idProjetoDelete = "xxx";
 
+    // mensagens erro
+    public static String mensagemErroUsuario = "Invalid user id";
+    public static String messagemErroAdm = "Username 'administrator' already used.";
+    public static String mensagemErroProjeto = "HTTP/1.1 400 Invalid project id.";
+    public static String mensagemErroVersion = "HTTP/1.1 400 'project_id' must be numeric";
+    public static String mensagemErroProjetoBusca = "404 Project #11 not found";
+    public static String mensagemErroIssue = "HTTP/1.1 404 Issue #233 not found";
+    public static String mensagemErroIssueBuscar = "HTTP/1.1 404 Issue #233 not found";
+    public static String mensagemErroAttachment = "HTTP/1.1 404 Issue #233 not found";
+    public static String mensagemErroFilter = "HTTP/1.1 404 Filter not found";
+
 }
 

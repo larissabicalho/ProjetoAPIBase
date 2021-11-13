@@ -6,8 +6,8 @@ import io.restassured.http.Method;
 
 public class DeletarUsuarioRequest extends RequestRestBase {
 
-    public DeletarUsuarioRequest(String userId){
-        requestService = "/api/rest/users/"+userId;
+    public DeletarUsuarioRequest(String userId) {
+        requestService = "/api/rest/users/" + userId;
         method = Method.DELETE;
         headers.put("Authorization", GlobalStaticParameters.token);
     }

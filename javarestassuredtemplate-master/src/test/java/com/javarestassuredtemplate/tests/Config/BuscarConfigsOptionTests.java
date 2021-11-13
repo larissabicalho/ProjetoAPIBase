@@ -19,24 +19,23 @@ public class BuscarConfigsOptionTests extends TestBase {
     ConfigOptionsProjetoRequest configOptionsProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void buscarConfigsComSucesso(){
+    public void buscarConfigsComSucesso() {
         //Busca dados do usuario
         //fluxo
         String configs = GlobalStaticParameters.configsOptions;
-        configOptionsProjetoRequest= new ConfigOptionsProjetoRequest(configs);
+        configOptionsProjetoRequest = new ConfigOptionsProjetoRequest(configs);
         response = configOptionsProjetoRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
         List<Options> list = Arrays.asList(Options.values());
-        for(int i = 0; i < list.size()-2; i++) {
+        for (int i = 0; i < list.size() - 2; i++) {
 
-           response.body(
-                   "configs.option["+i+"]", equalTo(list.get(i).name())
-           );
+            response.body(
+                    "configs.option[" + i + "]", equalTo(list.get(i).name())
+            );
         }
     }
 

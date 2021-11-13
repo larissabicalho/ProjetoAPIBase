@@ -15,10 +15,9 @@ public class BuscarConfigOptionTests extends TestBase {
     ConfigOptionProjetoRequest configOptionProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void buscarConfigComSucesso(){
+    public void buscarConfigComSucesso() {
         //Busca dados do usuario
         //fluxo
         String config = GlobalStaticParameters.configOption;
@@ -28,7 +27,7 @@ public class BuscarConfigOptionTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-       response.body(
+        response.body(
                 "configs[0].option", equalTo(config),
                 "configs[0].value", equalTo(GlobalStaticParameters.configOptionValue)
         );
@@ -36,7 +35,7 @@ public class BuscarConfigOptionTests extends TestBase {
     }
 
     @Test
-    public void buscarConfigComErro(){
+    public void buscarConfigComErro() {
         //Busca dados do usuario
         //fluxo
         configOptionProjetoRequest = new ConfigOptionProjetoRequest(GlobalStaticParameters.config);

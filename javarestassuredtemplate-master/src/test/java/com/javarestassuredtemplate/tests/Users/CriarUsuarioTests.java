@@ -2,6 +2,7 @@ package com.javarestassuredtemplate.tests.Users;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
+import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuario;
 import com.javarestassuredtemplate.requests.Users.CriarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
@@ -11,17 +12,16 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.equalTo;
 
 
-
 public class CriarUsuarioTests extends TestBase {
 
     CriarUsuarioRequest criarUsuarioRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
     int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
-    String messagemErro = "Username 'administrator' already used.";
+    String messagemErroAdm = GlobalStaticParameters.messagemErroAdm;
 
     @Test
-    public void criarUsuarioSucesso(){
+    public void criarUsuarioSucesso() {
         //Busca dados do usuario
         CriarUsuario criarUsuario = new CriarUsuario();
         //fluxo
@@ -36,7 +36,7 @@ public class CriarUsuarioTests extends TestBase {
         response.body(
                 "user.name", equalTo(criarUsuario.getUsername()),
                 "user.real_name", equalTo(criarUsuario.getReal_name()),
-                 "user.email", equalTo(criarUsuario.getEmail())
+                "user.email", equalTo(criarUsuario.getEmail())
         );
 
         String idUsuario = BuscarUsuarioDBSteps.retornaIdUsuario();
@@ -45,7 +45,7 @@ public class CriarUsuarioTests extends TestBase {
     }
 
     @Test
-    public void criarUsuarioErro(){
+    public void criarUsuarioErro() {
         //Busca dados do usuario
         CriarUsuario criarUsuario = new CriarUsuario();
         //fluxo
@@ -58,13 +58,13 @@ public class CriarUsuarioTests extends TestBase {
         response.statusCode(statusCodeEsperadoErro);
 
         response.body(
-                "message", equalTo(messagemErro)
+                "message", equalTo(messagemErroAdm)
         );
 
     }
 
     @Test
-    public void criarUsuarioSucessoJavascript(){
+    public void criarUsuarioSucessoJavascript() {
         //Busca dados do usuario
         CriarUsuario criarUsuario = new CriarUsuario();
         //fluxo

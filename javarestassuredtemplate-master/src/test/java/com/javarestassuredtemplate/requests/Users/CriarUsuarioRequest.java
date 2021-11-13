@@ -8,7 +8,7 @@ import io.restassured.http.Method;
 
 public class CriarUsuarioRequest extends RequestRestBase {
 
-    public CriarUsuarioRequest(){
+    public CriarUsuarioRequest() {
         requestService = "/api/rest/users/";
         method = Method.POST;
         headers.put("Authorization", GlobalStaticParameters.token);

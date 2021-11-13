@@ -3,7 +3,6 @@ package com.javarestassuredtemplate.tests.Lang;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.enums.Names;
-import com.javarestassuredtemplate.requests.Lang.LangOptionProjetoRequest;
 import com.javarestassuredtemplate.requests.Lang.LangOptionsProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
@@ -20,7 +19,6 @@ public class BuscarLangOptionsTests extends TestBase {
     LangOptionsProjetoRequest langOptionsProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void buscarLangConfigsComSucesso(){

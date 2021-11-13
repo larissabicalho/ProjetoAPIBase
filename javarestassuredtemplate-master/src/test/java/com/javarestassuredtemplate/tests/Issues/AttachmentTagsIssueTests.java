@@ -18,7 +18,6 @@ public class AttachmentTagsIssueTests extends TestBase {
     AttachIssuesRequest attachIssuesRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void BuscarIssueFilterMonitoredComSucesso() {
@@ -54,7 +53,6 @@ public class AttachmentTagsIssueTests extends TestBase {
                 "issues.tags[0].id[2]", equalTo(BuscarIssueDBSteps.retornarTags().get(4)),
                 "issues.tags[0].name[2]", equalTo(BuscarIssueDBSteps.retornarTags().get(5))
         );
-
 
 
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);

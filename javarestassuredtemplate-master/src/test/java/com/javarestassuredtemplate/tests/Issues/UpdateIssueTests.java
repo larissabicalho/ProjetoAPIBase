@@ -6,7 +6,6 @@ import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Issues.UpdateIssue;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
 import com.javarestassuredtemplate.requests.Issues.UpdateIssueRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
@@ -20,7 +19,6 @@ public class UpdateIssueTests extends TestBase {
     UpdateIssueRequest updateIssueRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void UpdateIssueComSucesso() {

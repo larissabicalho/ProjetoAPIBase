@@ -5,7 +5,6 @@ import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
-import com.javarestassuredtemplate.requests.Project.BuscarProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
@@ -19,8 +18,7 @@ public class BuscarIssueTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    GlobalStaticParameters globalStaticParameters;
-    String mensagemErro = "HTTP/1.1 404 Issue #233 not found";
+    String mensagemErroIssueBuscar = GlobalStaticParameters.mensagemErroIssueBuscar;
 
     @Test
     public void buscarIssueComSucesso() {
@@ -67,7 +65,7 @@ public class BuscarIssueTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(mensagemErro);
+        response.statusLine(mensagemErroIssueBuscar);
 
         BuscarIssueDBSteps.deletarIssue();
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);

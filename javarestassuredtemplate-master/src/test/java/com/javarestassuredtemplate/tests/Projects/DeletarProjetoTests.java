@@ -2,25 +2,23 @@ package com.javarestassuredtemplate.tests.Projects;
 
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.dbsteps.BuscarUsuarioDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Project.DeletarProjetoRequest;
-import com.javarestassuredtemplate.requests.Users.DeletarUsuarioRequest;
+import com.javarestassuredtemplate.requests.Projects.DeletarProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
-public class DeletarProjetoTest extends TestBase {
+public class DeletarProjetoTests extends TestBase {
 
     DeletarProjetoRequest deletarProjetoRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
     int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
-    String mensagemErro = "HTTP/1.1 400 Invalid project id.";
+    String mensagemErroProjeto = GlobalStaticParameters.mensagemErroProjeto;
 
     @Test
-    public void deletarProjetoComSucesso(){
+    public void deletarProjetoComSucesso() {
         //Busca dados do usuario
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
@@ -34,7 +32,7 @@ public class DeletarProjetoTest extends TestBase {
     }
 
     @Test
-    public void deletarProjetoErro(){
+    public void deletarProjetoErro() {
         //Busca dados do usuario
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
@@ -44,7 +42,7 @@ public class DeletarProjetoTest extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(Matchers.containsString(mensagemErro));
+        response.statusLine(Matchers.containsString(mensagemErroProjeto));
 
     }
 }

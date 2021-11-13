@@ -3,7 +3,7 @@ package com.javarestassuredtemplate.tests.Projects;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Project.BuscarProjetoRequest;
+import com.javarestassuredtemplate.requests.Projects.BuscarProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.hamcrest.Matchers;
@@ -18,10 +18,10 @@ public class BuscarProjetoTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    String mensagemErro = "404 Project #11 not found";
+    String mensagemErroProjetoBusca = GlobalStaticParameters.mensagemErroProjetoBusca;
 
     @Test
-    public void buscarProjetoComSucesso(){
+    public void buscarProjetoComSucesso() {
         //Busca dados do usuario
         //fluxo
 
@@ -33,17 +33,17 @@ public class BuscarProjetoTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-       response.body(
+        response.body(
                 "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
                 "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1))
         );
 
-          BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
     }
 
     @Test
-    public void buscarProjetoComErro(){
+    public void buscarProjetoComErro() {
         //Busca dados do usuario
         //fluxo
         String idProjeto = GlobalStaticParameters.idProjeto;
@@ -52,15 +52,7 @@ public class BuscarProjetoTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(Matchers.containsString(mensagemErro));
-
-       /* response.body(
-                "projects[0].id", equalTo(Integer.valueOf(idProjeto)),
-                "projects[0].name", equalTo(BuscarProjetoDBSteps.retornaDadosProjeto().get(1)),
-                "projects[0].description", equalTo( BuscarProjetoDBSteps.retornaDadosProjeto().get(2))
-        );
-
-*/
+        response.statusLine(Matchers.containsString(mensagemErroProjetoBusca));
 
     }
 

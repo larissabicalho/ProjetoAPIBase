@@ -19,14 +19,14 @@ public class UpdateIssueRequest extends RequestRestBase {
     }
 
     public void setJsonBodyUsingJavaObject(String nameProject,
-                                           String status){
+                                           String status) {
         jsonBody = new UpdateIssue(new Handler(nameProject),
                 new Status(status)
 
         );
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 

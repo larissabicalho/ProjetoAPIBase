@@ -3,8 +3,6 @@ package com.javarestassuredtemplate.tests.Issues;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
 import com.javarestassuredtemplate.requests.Issues.BuscarTodasIssuesRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
@@ -20,7 +18,6 @@ public class BuscarTodasIssuesTests extends TestBase {
     BuscarTodasIssuesRequest buscarTodasIssuesRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void buscarTodasIssuesComSucesso() {
@@ -43,33 +40,33 @@ public class BuscarTodasIssuesTests extends TestBase {
         int jProject = 1;
         int kSummary = 2;
         int mPossicoes = 0;
-        while(( iiD <= idsIssues.size()-3 ) && (jProject <= idsIssues.size()-2) && (kSummary <= idsIssues.size()-1)){
+        while ((iiD <= idsIssues.size() - 3) && (jProject <= idsIssues.size() - 2) && (kSummary <= idsIssues.size() - 1)) {
             response.body(
-                    "issues.id["+mPossicoes+"]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornaDadosTodasIssue().get(iiD))),
-                    "issues.summary["+mPossicoes+"]", equalTo(BuscarIssueDBSteps.retornaDadosTodasIssue().get(kSummary)),
-                    "issues.project.id["+mPossicoes+"]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornaDadosTodasIssue().get(jProject)))
+                    "issues.id[" + mPossicoes + "]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornaDadosTodasIssue().get(iiD))),
+                    "issues.summary[" + mPossicoes + "]", equalTo(BuscarIssueDBSteps.retornaDadosTodasIssue().get(kSummary)),
+                    "issues.project.id[" + mPossicoes + "]", equalTo(Integer.valueOf(BuscarIssueDBSteps.retornaDadosTodasIssue().get(jProject)))
             );
             iiD = iiD + 3;
             jProject = jProject + 3;
             kSummary = kSummary + 3;
-            mPossicoes = mPossicoes +1;
+            mPossicoes = mPossicoes + 1;
 
         }
 
-       int n = 0;
-        while (n <= idsIssues.size()-3) {
+        int n = 0;
+        while (n <= idsIssues.size() - 3) {
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
 
-      int p = 1;
-      while (p <= idsIssues.size()-2){
-           BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
+        int p = 1;
+        while (p <= idsIssues.size() - 2) {
+            BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
             p = p + 3;
         }
-      for(int v = 0; v < idsTexto.size(); v++) {
+        for (int v = 0; v < idsTexto.size(); v++) {
             BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
-     }
+        }
 
 
     }

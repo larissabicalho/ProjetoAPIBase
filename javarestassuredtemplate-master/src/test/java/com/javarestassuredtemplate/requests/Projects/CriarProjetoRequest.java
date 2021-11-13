@@ -1,11 +1,10 @@
-package com.javarestassuredtemplate.requests.Project;
+package com.javarestassuredtemplate.requests.Projects;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjeto;
 import com.javarestassuredtemplate.jsonObjects.Projects.CriarProjetoDataDriven;
 import com.javarestassuredtemplate.jsonObjects.Status;
-import com.javarestassuredtemplate.jsonObjects.Users.CriarUsuarioDataDriven;
 import com.javarestassuredtemplate.jsonObjects.View_State;
 import io.restassured.http.Method;
 
@@ -29,18 +28,18 @@ public class CriarProjetoRequest extends RequestRestBase {
                                            String labelView,
                                            String description,
                                            boolean enabled,
-                                           String file_path){
+                                           String file_path) {
         jsonBody = new CriarProjeto(id,
-                   name,
-                   new Status(idStatus,nameStatus,labelStatus),
-                   description,
-                   enabled,
-                   file_path,
-                   new View_State(idStatus, nameView, labelView)
+                name,
+                new Status(idStatus, nameStatus, labelStatus),
+                description,
+                enabled,
+                file_path,
+                new View_State(idStatus, nameView, labelView)
         );
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 

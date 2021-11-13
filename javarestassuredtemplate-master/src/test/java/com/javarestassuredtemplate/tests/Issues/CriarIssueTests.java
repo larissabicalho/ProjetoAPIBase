@@ -18,10 +18,9 @@ public class CriarIssueTests extends TestBase {
     CriarIssuesRequest criarIssuesRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
-    public void criarIssueComSucesso(){
+    public void criarIssueComSucesso() {
         //fluxo
 
         BuscarProjetoDBSteps.insereProjeto();
@@ -38,16 +37,16 @@ public class CriarIssueTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-      response.body(
+        response.body(
                 "issue.summary", equalTo(criarIssue.getSummary()),
                 "issue.description", equalTo(criarIssue.getDescription()),
                 "issue.project.name", equalTo(criarIssue.getProject().getName()),
-                 "issue.category.name", equalTo(criarIssue.getCategory().getName())
+                "issue.category.name", equalTo(criarIssue.getCategory().getName())
         );
 
-         BuscarIssueDBSteps.deletarIssue();
-         BuscarIssueDBSteps.deletarTexto();
-         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarIssueDBSteps.deletarIssue();
+        BuscarIssueDBSteps.deletarTexto();
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
     }
 

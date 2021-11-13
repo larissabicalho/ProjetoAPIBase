@@ -3,9 +3,7 @@ package com.javarestassuredtemplate.tests.Issues;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNoteAttachment;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNoteTracking;
 import com.javarestassuredtemplate.requests.Issues.CriarIssueNoteRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
@@ -19,7 +17,6 @@ public class CriarIssueNoteAttachmentTests extends TestBase {
     CriarIssueNoteRequest criarIssueNoteRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void criarIssueNoteAttachment() {
@@ -34,7 +31,7 @@ public class CriarIssueNoteAttachmentTests extends TestBase {
         String idIssue = BuscarIssueDBSteps.retornaDadosIssue().get(0);
         CriarIssueNoteAttachment criarIssueNoteAttachment = new CriarIssueNoteAttachment();
         criarIssueNoteAttachment.setDados();
-        criarIssueNoteRequest  = new CriarIssueNoteRequest(idIssue);
+        criarIssueNoteRequest = new CriarIssueNoteRequest(idIssue);
         criarIssueNoteRequest.setJsonBodyUsingJavaObject(criarIssueNoteAttachment);
         response = criarIssueNoteRequest.executeRequest();
         //Validações
@@ -43,7 +40,7 @@ public class CriarIssueNoteAttachmentTests extends TestBase {
 
         response.body(
                 "note.text", equalTo(criarIssueNoteAttachment.getText()),
-                "note.view_state.id", equalTo((int)criarIssueNoteAttachment.getView_state().getId()),
+                "note.view_state.id", equalTo((int) criarIssueNoteAttachment.getView_state().getId()),
                 "note.view_state.name", equalTo(criarIssueNoteAttachment.getView_state().getName()),
                 "note.view_state.label", equalTo(criarIssueNoteAttachment.getView_state().getLabel()),
                 "note.time_tracking.duration", equalTo(criarIssueNoteAttachment.getTime_tracking().getDuration()),

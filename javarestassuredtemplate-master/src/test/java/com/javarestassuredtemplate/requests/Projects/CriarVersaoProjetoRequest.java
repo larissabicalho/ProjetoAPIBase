@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.requests.Project;
+package com.javarestassuredtemplate.requests.Projects;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
@@ -9,7 +9,7 @@ import io.restassured.http.Method;
 public class CriarVersaoProjetoRequest extends RequestRestBase {
 
     public CriarVersaoProjetoRequest(String idProjeto) {
-        requestService = "/api/rest/projects/"+idProjeto+"/versions/";
+        requestService = "/api/rest/projects/" + idProjeto + "/versions/";
         method = Method.POST;
         headers.put("Authorization", GlobalStaticParameters.token);
         headers.put("Content-Type", "application/json");
@@ -19,7 +19,7 @@ public class CriarVersaoProjetoRequest extends RequestRestBase {
                                            String description,
                                            boolean released,
                                            boolean obsolete,
-                                           String timestamp){
+                                           String timestamp) {
         jsonBody = new VersionProject(name,
                 description,
                 released,
@@ -28,7 +28,7 @@ public class CriarVersaoProjetoRequest extends RequestRestBase {
         );
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 

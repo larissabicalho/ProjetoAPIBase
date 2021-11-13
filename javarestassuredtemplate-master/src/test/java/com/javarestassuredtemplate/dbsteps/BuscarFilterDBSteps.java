@@ -1,6 +1,5 @@
 package com.javarestassuredtemplate.dbsteps;
 
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
 import com.javarestassuredtemplate.utils.DBUtils;
 import com.javarestassuredtemplate.utils.GeneralUtils;
 import com.javarestassuredtemplate.utils.GerarDados;
@@ -8,10 +7,10 @@ import com.javarestassuredtemplate.utils.GerarDados;
 import java.util.ArrayList;
 
 public class BuscarFilterDBSteps {
-    private static String queriesPath ="src/test/java/com/javarestassuredtemplate/queries/Filters/";
+    private static String queriesPath = "src/test/java/com/javarestassuredtemplate/queries/Filters/";
 
 
-    public static void insereFilter(String userId, String projectId){
+    public static void insereFilter(String userId, String projectId) {
         String query = GeneralUtils.readFileToAString(queriesPath + "inserirFilter.sql");
         query = query.replace("$user_id", userId);
         query = query.replace("$project_id", projectId);
@@ -20,19 +19,19 @@ public class BuscarFilterDBSteps {
         DBUtils.getQueryResult(query);
     }
 
-    public static ArrayList<String> retornarIdNameFilter(){
+    public static ArrayList<String> retornarIdNameFilter() {
         String query = GeneralUtils.readFileToAString(queriesPath + "retornarFilter.sql");
         return DBUtils.getQueryResult(query);
     }
 
-    public static void deletarFilter(String filterId){
+    public static void deletarFilter(String filterId) {
         String query = GeneralUtils.readFileToAString(queriesPath + "deletarFilter.sql");
         query = query.replace("$idFilter", filterId);
         DBUtils.getQueryResult(query);
     }
 
 
-    public static ArrayList<String> retornarIdNameTodosFilter(){
+    public static ArrayList<String> retornarIdNameTodosFilter() {
         String query = GeneralUtils.readFileToAString(queriesPath + "retornarTodosFilter.sql");
         return DBUtils.getQueryResult(query);
     }

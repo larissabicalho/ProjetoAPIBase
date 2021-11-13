@@ -3,15 +3,11 @@ package com.javarestassuredtemplate.tests.Issues;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.enums.Filter;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueFilterRequest;
 import com.javarestassuredtemplate.requests.Issues.MonitorarIssueRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -21,7 +17,6 @@ public class MonitorarIssueTests extends TestBase {
     MonitorarIssueRequest monitorarIssueRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void BuscarIssueFilterMonitoredComSucesso() {

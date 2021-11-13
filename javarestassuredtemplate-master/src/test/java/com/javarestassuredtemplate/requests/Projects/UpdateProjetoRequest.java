@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.requests.Project;
+package com.javarestassuredtemplate.requests.Projects;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
@@ -17,14 +17,14 @@ public class UpdateProjetoRequest extends RequestRestBase {
     public void setJsonBodyUsingJavaObject(long id,
                                            String name,
                                            boolean enabled
-                                         ){
+    ) {
         jsonBody = new UpdateProjeto(id,
                 name,
                 enabled
         );
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 

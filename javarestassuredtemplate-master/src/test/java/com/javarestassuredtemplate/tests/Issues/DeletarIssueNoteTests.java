@@ -3,16 +3,10 @@ package com.javarestassuredtemplate.tests.Issues;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarIssueNote;
-import com.javarestassuredtemplate.requests.Issues.CriarIssueNoteRequest;
 import com.javarestassuredtemplate.requests.Issues.DeletarIssueNoteRequest;
-import com.javarestassuredtemplate.utils.GerarDados;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class DeletarIssueNoteTests extends TestBase {
@@ -20,7 +14,6 @@ public class DeletarIssueNoteTests extends TestBase {
     DeletarIssueNoteRequest deletarIssueNoteRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void deletarIssueNote() {
@@ -35,7 +28,7 @@ public class DeletarIssueNoteTests extends TestBase {
         String idIssue = BuscarIssueDBSteps.retornaDadosIssue().get(0);
         BuscarIssueDBSteps.inserirBugNoteText();
         String idBugNoteText = BuscarIssueDBSteps.retornarIdBugNoteText();
-        BuscarIssueDBSteps.inserirBugNote(idIssue,idBugNoteText);
+        BuscarIssueDBSteps.inserirBugNote(idIssue, idBugNoteText);
         String idBugNote = BuscarIssueDBSteps.retornarIdBugNote();
         deletarIssueNoteRequest = new DeletarIssueNoteRequest(idIssue, idBugNote);
         response = deletarIssueNoteRequest.executeRequest();

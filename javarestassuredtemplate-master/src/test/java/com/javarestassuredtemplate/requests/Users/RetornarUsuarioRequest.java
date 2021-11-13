@@ -6,7 +6,7 @@ import io.restassured.http.Method;
 
 public class RetornarUsuarioRequest extends RequestRestBase {
 
-    public RetornarUsuarioRequest(){
+    public RetornarUsuarioRequest() {
         requestService = "/api/rest/users/me";
         method = Method.GET;
         headers.put("Authorization", GlobalStaticParameters.token);

@@ -7,6 +7,7 @@ import com.javarestassuredtemplate.requests.Users.DeletarUsuarioRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
+
 import static org.hamcrest.Matchers.equalTo;
 
 
@@ -16,10 +17,10 @@ public class DeletarUsuarioTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
     int statusCodeEsperadoErro = HttpStatus.SC_BAD_REQUEST;
-    String mensagemErro = "Invalid user id";
+    String mensagemErroUsuario = GlobalStaticParameters.mensagemErroUsuario;
 
     @Test
-    public void deletarUsuarioComSucesso(){
+    public void deletarUsuarioComSucesso() {
         //Busca dados do usuario
         //fluxo
         BuscarUsuarioDBSteps.insereUsuario();
@@ -34,7 +35,7 @@ public class DeletarUsuarioTests extends TestBase {
     }
 
     @Test
-    public void deletarUsuarioComErro(){
+    public void deletarUsuarioComErro() {
         //Busca dados do usuario
         //fluxo
         BuscarUsuarioDBSteps.insereUsuario();
@@ -45,7 +46,7 @@ public class DeletarUsuarioTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
         response.body(
-                "message", equalTo(mensagemErro)
+                "message", equalTo(mensagemErroUsuario)
         );
 
     }

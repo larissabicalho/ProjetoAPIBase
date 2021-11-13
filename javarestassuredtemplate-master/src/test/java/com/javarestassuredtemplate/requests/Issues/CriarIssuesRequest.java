@@ -9,7 +9,7 @@ import io.restassured.http.Method;
 
 public class CriarIssuesRequest extends RequestRestBase {
 
-    public CriarIssuesRequest(){
+    public CriarIssuesRequest() {
         requestService = "/api/rest/issues/";
         method = Method.POST;
         headers.put("Authorization", GlobalStaticParameters.token);
@@ -19,7 +19,7 @@ public class CriarIssuesRequest extends RequestRestBase {
     public void setJsonBodyUsingJavaObject(String summary,
                                            String description,
                                            String nameCategory,
-                                           String nameProject){
+                                           String nameProject) {
         jsonBody = new CriarIssue(summary,
                 description,
                 new Category(nameCategory),
@@ -27,7 +27,7 @@ public class CriarIssuesRequest extends RequestRestBase {
         );
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 

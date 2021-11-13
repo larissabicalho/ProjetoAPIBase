@@ -17,7 +17,6 @@ public class RetornarFilterTests extends TestBase {
     RetornarFilterRequest retornarFilterRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void retornarFilterComSucesso() {
@@ -25,7 +24,7 @@ public class RetornarFilterTests extends TestBase {
         //fluxo
         BuscarProjetoDBSteps.insereProjeto();
         String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
-        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user,idProjeto);
+        BuscarFilterDBSteps.insereFilter(GlobalStaticParameters.user, idProjeto);
         String filterId = BuscarFilterDBSteps.retornarIdNameFilter().get(0);
         retornarFilterRequest = new RetornarFilterRequest(filterId);
         response = retornarFilterRequest.executeRequest();

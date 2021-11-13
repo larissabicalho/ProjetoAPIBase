@@ -1,4 +1,4 @@
-package com.javarestassuredtemplate.requests.Project;
+package com.javarestassuredtemplate.requests.Projects;
 
 import com.javarestassuredtemplate.bases.RequestRestBase;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;

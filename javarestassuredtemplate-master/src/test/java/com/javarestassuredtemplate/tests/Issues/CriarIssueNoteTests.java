@@ -21,7 +21,6 @@ public class CriarIssueNoteTests extends TestBase {
     CriarIssueNoteRequest criarIssueNoteRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_CREATED;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void criarIssueNote() {
@@ -36,7 +35,7 @@ public class CriarIssueNoteTests extends TestBase {
         String idIssue = BuscarIssueDBSteps.retornaDadosIssue().get(0);
         CriarIssueNote criarIssueNote = new CriarIssueNote();
         criarIssueNote.setDados();
-        criarIssueNoteRequest  = new CriarIssueNoteRequest(idIssue);
+        criarIssueNoteRequest = new CriarIssueNoteRequest(idIssue);
         criarIssueNoteRequest.setJsonBodyUsingJavaObject(criarIssueNote);
         response = criarIssueNoteRequest.executeRequest();
         //Validações
@@ -45,7 +44,7 @@ public class CriarIssueNoteTests extends TestBase {
 
         response.body(
                 "note.text", equalTo(criarIssueNote.getText()),
-                "note.view_state.id", equalTo((int)criarIssueNote.getView_state().getId()),
+                "note.view_state.id", equalTo((int) criarIssueNote.getView_state().getId()),
                 "note.view_state.name", equalTo(criarIssueNote.getView_state().getName()),
                 "note.view_state.label", equalTo(criarIssueNote.getView_state().getLabel())
         );

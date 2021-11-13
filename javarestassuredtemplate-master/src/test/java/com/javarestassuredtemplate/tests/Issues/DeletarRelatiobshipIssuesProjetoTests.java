@@ -3,17 +3,12 @@ package com.javarestassuredtemplate.tests.Issues;
 import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
-import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.jsonObjects.Issues.CriarRelationships;
 import com.javarestassuredtemplate.requests.Issues.DeletarRelationshipIssuesRequest;
-import com.javarestassuredtemplate.requests.Issues.RelationshipIssuesRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class DeletarRelatiobshipIssuesProjetoTests extends TestBase {
@@ -21,7 +16,6 @@ public class DeletarRelatiobshipIssuesProjetoTests extends TestBase {
     DeletarRelationshipIssuesRequest deletarRelationshipIssuesRequest;
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_OK;
-    GlobalStaticParameters globalStaticParameters;
 
     @Test
     public void deletaRelatiobshipComSucesso() {
@@ -39,24 +33,24 @@ public class DeletarRelatiobshipIssuesProjetoTests extends TestBase {
         ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssueIdProjeto(idProjeto);
         BuscarIssueDBSteps.inserirRelationship(idsIssues.get(0), idsIssues.get(3));
         String idRelationship = BuscarIssueDBSteps.retornarRelationship(idsIssues.get(0));
-        deletarRelationshipIssuesRequest = new DeletarRelationshipIssuesRequest(idsIssues.get(0),idRelationship);
+        deletarRelationshipIssuesRequest = new DeletarRelationshipIssuesRequest(idsIssues.get(0), idRelationship);
         response = deletarRelationshipIssuesRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
         ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
 
-            int n = 0;
-            while (n <= idsIssues.size()-3) {
+        int n = 0;
+        while (n <= idsIssues.size() - 3) {
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
-            }
+        }
 
-           BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
-      for(int v = 0; v < idsTexto.size(); v++) {
+        for (int v = 0; v < idsTexto.size(); v++) {
             BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
-       }
+        }
 
     }
 }

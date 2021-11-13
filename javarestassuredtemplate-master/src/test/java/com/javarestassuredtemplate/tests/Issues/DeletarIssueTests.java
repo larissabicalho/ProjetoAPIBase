@@ -4,14 +4,10 @@ import com.javarestassuredtemplate.bases.TestBase;
 import com.javarestassuredtemplate.dbsteps.BuscarIssueDBSteps;
 import com.javarestassuredtemplate.dbsteps.BuscarProjetoDBSteps;
 import com.javarestassuredtemplate.defaultParameters.GlobalStaticParameters;
-import com.javarestassuredtemplate.requests.Issues.BuscarIssueRequest;
 import com.javarestassuredtemplate.requests.Issues.DeletarIssueRequest;
-import com.javarestassuredtemplate.requests.Project.DeletarProjetoRequest;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
-
-import static org.hamcrest.Matchers.equalTo;
 
 
 public class DeletarIssueTests extends TestBase {
@@ -20,8 +16,7 @@ public class DeletarIssueTests extends TestBase {
     ValidatableResponse response;
     int statusCodeEsperado = HttpStatus.SC_NO_CONTENT;
     int statusCodeEsperadoErro = HttpStatus.SC_NOT_FOUND;
-    GlobalStaticParameters globalStaticParameters;
-    String mensagemErro = "HTTP/1.1 404 Issue #233 not found";
+    String mensagemErroIssue = GlobalStaticParameters.mensagemErroIssue;
 
     @Test
     public void deletarIssueComSucesso() {
@@ -61,7 +56,7 @@ public class DeletarIssueTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
-        response.statusLine(mensagemErro);
+        response.statusLine(mensagemErroIssue);
 
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarTexto();

@@ -16,7 +16,7 @@ import java.sql.Blob;
 
 public class CriarIssuesAttachmentsRequest extends RequestRestBase {
 
-    public CriarIssuesAttachmentsRequest(){
+    public CriarIssuesAttachmentsRequest() {
         requestService = "/api/rest/issues/";
         method = Method.POST;
         headers.put("Authorization", GlobalStaticParameters.token);
@@ -33,16 +33,16 @@ public class CriarIssuesAttachmentsRequest extends RequestRestBase {
                                            String nameField,
                                            String valueField,
                                            String nameFile,
-                                           String contentFile){
+                                           String contentFile) {
         jsonBody = new CriarIssueAttachment(summary,
                 description,
-                new Category(idCategory,nameCategory),
-                new Project(idProjeto,nameProject),
+                new Category(idCategory, nameCategory),
+                new Project(idProjeto, nameProject),
                 new Custom_Field(new Field(idField, nameField), valueField),
                 new Files[]{new Files(nameFile, contentFile)});
     }
 
-    public void setJsonBodyUsingJavaObject(Object jsonObject){
+    public void setJsonBodyUsingJavaObject(Object jsonObject) {
         jsonBody = jsonObject;
     }
 
