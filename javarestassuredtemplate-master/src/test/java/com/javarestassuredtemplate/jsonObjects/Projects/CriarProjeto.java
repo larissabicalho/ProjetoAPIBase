@@ -30,7 +30,7 @@ public class CriarProjeto {
     }
 
     public void setDadosJavaScript() {
-        name = GerarDados.nomeProjeto();
+        name = GerarDados.nomeProjetoJavascript();
         status = new Status(GlobalStaticParameters.statusId,GlobalStaticParameters.statusName,GlobalStaticParameters.statusName);
         view_state = new View_State(GlobalStaticParameters.statusId, GlobalStaticParameters.viewStateName, GlobalStaticParameters.viewStateName);
     }
