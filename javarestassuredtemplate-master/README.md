@@ -1,4 +1,3 @@
-
 # Projeto Desafio Mantis 
   
 Este projeto foi criado com o intuito de aprender sobre o RESTASSURED e cumprir metas de um desafio de automação de APIREST.
@@ -22,23 +21,81 @@ Serão necessárias as seguinte configurações para iniciar o projeto:
 
 ![](https://i.stack.imgur.com/GFc3Z.png)
 
-4.  Deverá ser apresentado o tutorial, basta dar skip que você terá esta tela
+4.  Abra um terminal e acesse o diretório onde contém o arquivo do docker-compose
 
-5.  Abra um terminal e acesse o diretório onde contém o arquivo do docker-compose
+5.  No diretório haverá o arquivo **docker-compose.yml**
 
-6.  No diretório haverá o arquivo **docker-compose.yml**
+6.  Execute o comando> `docker-compose.exe up -d`
 
-7.  Execute o comando> `docker-compose.exe up -d`
+7.  Após o processamento se tudo correr bem, as imagens serão baixadas e novos contêineres criados:
 
-8.  Após o processamento se tudo correr bem, as imagens serão baixadas e novos contêineres criados:
+8.  Para validar a criação e execução dos execute o comando `docker ps -a` e os contêineres estarão disponíveis e executando.
 
-9.  Para validar a criação e execução dos execute o comando `docker ps -a` e os contêineres estarão disponíveis e executando:
+## **1.2 Setup VirtualBox**
+1. Com o tópico 1.1 já realizado, executar no *Docker Quickstart Terminal*, o comando `docker-machine ip` e coletar a informação
+
+2. Abrir o software VirtualBox (última versão deverá estar instalada)
+
+3. Encontrar a imagem referente ao docker
+
+4. Acessar "Configurações"
+
+5. Acessar "Redes"
+
+6. Acessar "Avançado"
+
+7. Acessar "Redirecionamento de Portas"
+
+8. A configuração para funcionar no docker toolbox deverá estar dessa maneira:
+
+![enter image description here](https://i.imgur.com/nUKTsr2.png)
+
+9. Incluir linha conforme nome "docker"
+
+10. Protocolo: TCP
+
+11. Endereço de Hospedeiro: 127.0.0.1
+
+12. Porta de Hospedeiro: 80
+
+13. IP Convidado preenchido com o valor recebido do docker (docker-machine ip default): 192.168.99.100
+
+14. Porta do convidado: 80
+
+MariaDb/Mantis/Jenkis:  
+
+1. Encontrar a imagem referente ao docker
+
+2. Acessar "Configurações"
+
+3. Acessar "Redes"
+
+4. Acessar "Avançado"
+
+5. Acessar "Redirecionamento de Portas"
+
+6. A configuração para funcionar no docker toolbox deverá estar dessa maneira:
+
+![enter image description here](https://i.imgur.com/09lJxzV.png)
+
+7. Incluir linha conforme nome "docker"
+
+8. Protocolo: TCP
+
+9. Endereço de Hospedeiro: 127.0.0.1
+
+10. Porta de Hospedeiro: 3306
+
+11. IP Convidado preenchido com o valor recebido do docker (docker-machine ip default): 192.168.99.101
+
+12. Porta do convidado: 3306
+13. Faça isso para o Mantis e  o Jenkins
+
   
 
 ## **1.2 Configuração inicial Mantis**
 
-Faça o seu primeiro acesso ao Mantis pelo endereço http://127.0.0.1:8989
-
+Faça o seu primeiro acesso ao Mantis pelo endereço http://192.168.99.101:8989
 Após acessar será necessário configurar o banco de dados conforme tabela e valores abaixo:
 
 | Variável | Valor |
@@ -61,15 +118,16 @@ O primeiro acesso deverá ser feito utilizando as credenciais *administrator/roo
 
 Para acessar ao banco de dados do Mantis (MariaDB) siga os passos abaixo:
 
-1. Baixe e instale o [software HeidiSQL](https://www.heidisql.com/download.php)
+1. Baixe e instale o [Dbeaver](https://dbeaver.io/download/)
 
-2. Ao abrir o Gerenciador de sessões, preencha com os valores abaixo:
+2. Crie uma nova conexão é configure da seguinte maneira : 
 
-![](https://i.imgur.com/AhKMxvu.png)
+| Variável | Valor |
+|-----|------|
+| Server Host |localhost |
+| Username | root |
+| Password| root |
 
-3. Abra a conexão e será possível verificar todas as tabelas e registros:
-
-![](https://i.imgur.com/EnYk6Md.png)
 
 ## 2. Mantis Bug Tracker REST API
 
@@ -84,7 +142,7 @@ Basta acessar a [documentação oficial Mantis Bug Tracker REST API](https://doc
 
 ### O Token é um parâmetro esssencial nas requisições do Mantis Bug Tracker REST API, para gerá-lo:
 
-1. Acesse o sistema Mantis com o usuário administrador - http://127.0.0.1:8989
+1. Acesse o sistema Mantis com o usuário administrador - http://192.168.99.101:8989/
 
 2. Acesse o menu com nome do usuário/Minha Conta
 
@@ -105,23 +163,37 @@ Exemplo de execução no Postman:
 
 ![](https://i.imgur.com/sSofy8o.png)
 
-## 3. Definições Sobre Projeto
+## 3. Jenkins
+Para a execução remota dos testes automatizados, via jenkins foi executados os seguintes passos:
 
-## 4. Jenkins
-Para a execução remota dos testes automatizados, via selenum grid, serão utilizados os seguintes passos:
+1. Criação de um DockerFile, que está na pasta Utils do Projeto (atráves desse Dockerfile e criado uma imagem do Jenkins contendo o Maven)
+ Execute o comando no QuickStartTerminal> `docker build -t jenkins-maven .` ex. Faça isso antes de subir o compose 
+2. Acessar o endereço do Jenkins vai ter provávelmente nesse endereço : http://192.168.99.101:8081 vai ser necessário uma chave.
+ Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
+ - Crie um novo Job ![image](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
+ - Configure o Job (Nome e Tipo)![image](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
+ - Colocar o Projeto Git no Jenkins ![image](https://drive.google.com/uc?export=view&id=1nLYeXs7puY9wxFNdd0N9YlvfDn6f4HZ)
+ - Adicionar as credenciais git para baixar (nesse passo rode a automação para verificar a conexão com o Git)![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
+![image](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
+3. Adicionar o Plugin o HTML Report 
+ - Gerenciar Jenkins ![image](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
+ - Gerenciar Plugins ![image](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
+ - HTML Plugin ![image](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
+4. Configurar o SufireReport ![image](https://drive.google.com/uc?export=view&id=1wjPR5-tmVzqtBgG5mvHP8LPJSZiu4xE0)
+5. Configurar o HTML Report ![image](https://drive.google.com/uc?export=view&id=12YJBvkgn1qXmyWdiDyKSq4IlAZRwVvNm)
 
-  
+## 4. Definições Sobre Projeto
 
-- Configuração dos contêineres hub, node chrome e node mozilla
+- Foram Criados mais de 50 Scripts de Automação Utilizando as API's ![image](https://drive.google.com/uc?export=view&id=1kxNRFKMhW0IcyKK3PJnE8HhqoTdmmOCm) 
+- Criação de Projetos e Usuários Utilizando DataDriven ![image](https://drive.google.com/uc?export=view&id=1pf92vwCnNH9XDTpodudns6LwLj38mflS)
+ ![image](https://drive.google.com/uc?export=view&id=10YtEv5aQmaFkSlP34L1IEP5bAzuoTeCO)
+- Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js)![image](https://drive.google.com/uc?export=view&id=1AanHe0Q-5DW8aqS-nImAzEYfG9mNCeAE)
+![image](https://drive.google.com/uc?export=view&id=1HxwRMJu2cIo9XAOSP6HjjfRZ_EV_uMY0)
+- Criação de Queries para Inserir e Deletar informações necessárias 
+- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado ![image](https://drive.google.com/uc?export=view&id=1kyYNKhq6g5Ly4RHWIVcrKHS1UjDnzBYc)
 
-- Verificação do console
-
-  
-
-
-
-
-
-
-
-
+## **4.1 Configurar o TimeTracking** 
+ Passos Abaixo:
+1. Gerenciar no Mantis
+2. Apos isso siga a imagem abaixo ![image](https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh)
+3. A configuração será a seguinte ![image](https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c)
