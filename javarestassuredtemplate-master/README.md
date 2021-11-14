@@ -172,8 +172,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
  - Crie um novo Job ![image](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
  - Configure o Job (Nome e Tipo)![image](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
- - Colocar o Projeto Git no Jenkins ![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
- - Adicionar as credenciais git para baixar (nesse passo rode a automação para verificar a conexão com o Git)![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
+ - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
 ![image](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
 3. Adicionar o Plugin o HTML Report 
  - Gerenciar Jenkins ![image](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
