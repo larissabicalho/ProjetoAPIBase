@@ -172,7 +172,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
  - Crie um novo Job ![image](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
  - Configure o Job (Nome e Tipo)![image](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
- - Colocar o Projeto Git no Jenkins ![image](https://drive.google.com/uc?export=view&id=1nLYeXs7puY9wxFNdd0N9YlvfDn6f4HZ)
+ - Colocar o Projeto Git no Jenkins ![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
  - Adicionar as credenciais git para baixar (nesse passo rode a automação para verificar a conexão com o Git)![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
 ![image](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
 3. Adicionar o Plugin o HTML Report 
@@ -184,7 +184,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
 
 ## 4. Definições Sobre Projeto
 
-- Foram Criados mais de 50 Scripts de Automação Utilizando as API's ![image](https://drive.google.com/uc?export=view&id=1kxNRFKMhW0IcyKK3PJnE8HhqoTdmmOCm) 
+- Foram Criados mais de 50 Scripts de Automação Utilizando as API's ![image](https://drive.google.com/uc?export=view&id=1FSoCcES2DnyJat7y2rm40OnZ9Dzvrjmu)
 - Criação de Projetos e Usuários Utilizando DataDriven ![image](https://drive.google.com/uc?export=view&id=1pf92vwCnNH9XDTpodudns6LwLj38mflS)
  ![image](https://drive.google.com/uc?export=view&id=10YtEv5aQmaFkSlP34L1IEP5bAzuoTeCO)
 - Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js)![image](https://drive.google.com/uc?export=view&id=1AanHe0Q-5DW8aqS-nImAzEYfG9mNCeAE)
