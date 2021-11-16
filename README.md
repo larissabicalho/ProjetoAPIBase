@@ -190,12 +190,12 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
   -  Script Utilizado
 ![image](https://drive.google.com/uc?export=view&id=1HxwRMJu2cIo9XAOSP6HjjfRZ_EV_uMY0)
 - Criação de Queries para Inserir e Deletar informações necessárias ![](https://drive.google.com/uc?export=view&id=19YT3RMgonexKwOSN7snct-0J9fHbuBKV)
-- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado ![image](https://drive.google.com/uc?export=view&id=1kyYNKhq6g5Ly4RHWIVcrKHS1UjDnzBYc)
+- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado <img src="https://drive.google.com/uc?export=view&id=1kyYNKhq6g5Ly4RHWIVcrKHS1UjDnzBYc" style="center: 500px; max-width: 100%; height: auto" />
 
 ## **4.1 Configurar o TimeTracking** 
  Passos Abaixo:
 1. Gerenciar no Mantis
-2. Apos isso siga a imagem abaixo
+3. Apos isso siga a imagem abaixo
 <img src="https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh" style="center: 500px; max-width: 100%; height: auto" />
 3. A configuração será a seguinte
 <img src="https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c" style="center: 500px; max-width: 100%; height: auto" />
