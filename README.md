@@ -41,7 +41,7 @@ Serão necessárias as seguinte configurações para iniciar o projeto:
 
 8.  Para validar a criação e execução dos execute o comando `docker ps -a` e os contêineres estarão disponíveis e executando.
 
-## **1.2 Setup VirtualBox**
+## **1.2 ![hp6](https://user-images.githubusercontent.com/22267601/142079918-508c3636-2b45-4626-8877-c8394b0be0ca.png)**
 1. Com o tópico 1.1 já realizado, executar no *Docker Quickstart Terminal*, o comando `docker-machine ip` e coletar a informação
 
 2. Abrir o software VirtualBox (última versão deverá estar instalada)
@@ -103,7 +103,7 @@ MariaDb/Mantis/Jenkis:
 
   
 
-## **1.3 Configuração inicial Mantis**
+## **![hp7](https://user-images.githubusercontent.com/22267601/142079928-58da41d6-672f-4614-b904-8b297ea149c5.png)**
 
 Faça o seu primeiro acesso ao Mantis pelo endereço http://192.168.99.101:8989
 Após acessar será necessário configurar o banco de dados conforme tabela e valores abaixo:
@@ -124,7 +124,7 @@ O primeiro acesso deverá ser feito utilizando as credenciais *administrator/roo
 
   
 
-## **1.4 Acessar banco de dados Mantis/MariaDB**
+## **![hp8](https://user-images.githubusercontent.com/22267601/142079938-e753a2d1-1461-46cb-b0de-6526dd11286c.png)**
 
 Para acessar ao banco de dados do Mantis (MariaDB) siga os passos abaixo:
 
@@ -251,7 +251,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
 ![relatorio](https://user-images.githubusercontent.com/22267601/141993615-3380dc4b-a8cd-46ee-9180-2ff245db5669.png)
 
 
-## **4.1 Configurar o TimeTracking** 
+## **![hp9](https://user-images.githubusercontent.com/22267601/142079945-06fb8e83-4eb8-44b2-b78b-c0b841712d72.png)** 
  Passos Abaixo:
 1. Gerenciar no Mantis
 2. Apos isso siga a imagem abaixo </br>
