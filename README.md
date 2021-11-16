@@ -170,10 +170,10 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Execute o comando no QuickStartTerminal> `docker build -t jenkins-maven .` ex. Faça isso antes de subir o compose 
 2. Acessar o endereço do Jenkins vai ter provávelmente nesse endereço : http://192.168.99.101:8081 vai ser necessário uma chave.
  Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
- 2.1 Crie um novo Job ![image](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
- 2.2 Configure o Job (Nome e Tipo)![image](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
- 2.3 Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
-![image](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
+ - Crie um novo Job ![](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
+ - Configure o Job (Nome e Tipo)![](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
+ - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
+![](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
 3. Adicionar o Plugin o HTML Report 
  3.1 Gerenciar Jenkins ![](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
  3.2 Gerenciar Plugins ![](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
