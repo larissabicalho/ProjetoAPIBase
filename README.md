@@ -175,11 +175,11 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  2.3 Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![image](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
 ![image](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
 3. Adicionar o Plugin o HTML Report 
- 3.1 Gerenciar Jenkins ![image](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
- 3.2 Gerenciar Plugins ![image](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
- 3.3 HTML Plugin ![image](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
-4. Configurar o SufireReport ![image](https://drive.google.com/uc?export=view&id=1wjPR5-tmVzqtBgG5mvHP8LPJSZiu4xE0)
-5. Configurar o HTML Report ![image](https://drive.google.com/uc?export=view&id=12YJBvkgn1qXmyWdiDyKSq4IlAZRwVvNm)
+ 3.1 Gerenciar Jenkins ![](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
+ 3.2 Gerenciar Plugins ![](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
+ 3.3 HTML Plugin ![](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
+4. Configurar o SufireReport ![](https://drive.google.com/uc?export=view&id=1wjPR5-tmVzqtBgG5mvHP8LPJSZiu4xE0)
+5. Configurar o HTML Report ![](https://drive.google.com/uc?export=view&id=12YJBvkgn1qXmyWdiDyKSq4IlAZRwVvNm)
 
 ## 4. Definições Sobre Projeto
 
@@ -189,11 +189,11 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
   -  Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js)![image](https://drive.google.com/uc?export=view&id=1AanHe0Q-5DW8aqS-nImAzEYfG9mNCeAE)
   -  Script Utilizado
 ![image](https://drive.google.com/uc?export=view&id=1HxwRMJu2cIo9XAOSP6HjjfRZ_EV_uMY0)
-- Criação de Queries para Inserir e Deletar informações necessárias ![image](https://drive.google.com/uc?export=view&id=19YT3RMgonexKwOSN7snct-0J9fHbuBKV)
+- Criação de Queries para Inserir e Deletar informações necessárias ![](https://drive.google.com/uc?export=view&id=19YT3RMgonexKwOSN7snct-0J9fHbuBKV)
 - Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado ![image](https://drive.google.com/uc?export=view&id=1kyYNKhq6g5Ly4RHWIVcrKHS1UjDnzBYc)
 
 ## **4.1 Configurar o TimeTracking** 
  Passos Abaixo:
 1. Gerenciar no Mantis
-2. Apos isso siga a imagem abaixo ![image](https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh)
-3. A configuração será a seguinte ![image](https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c)
+2. Apos isso siga a imagem abaixo ![](https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh)
+3. A configuração será a seguinte ![](https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c)
