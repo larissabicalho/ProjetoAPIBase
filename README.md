@@ -170,16 +170,30 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Execute o comando no QuickStartTerminal> `docker build -t jenkins-maven .` ex. Faça isso antes de subir o compose 
 2. Acessar o endereço do Jenkins vai ter provávelmente nesse endereço : http://192.168.99.101:8081 vai ser necessário uma chave.
  Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
- - Crie um novo Job ![](https://drive.google.com/uc?export=view&id=1FzrW9Aj7Rovm-cNY-ij78kq4xhqLQqyj)
- - Configure o Job (Nome e Tipo)![](https://drive.google.com/uc?export=view&id=1nsxHiD55DryjW5Fg5amj_vTnjcgYdeLN)
- - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
-![](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
+ - Crie um novo Job 
+ ![jenkinsjob](https://user-images.githubusercontent.com/22267601/141997787-e4c13727-b279-4fe2-b0e7-fc4c09668da8.png)
+ - Configure o Job (Nome e Tipo)
+ ![job](https://user-images.githubusercontent.com/22267601/141997722-bbba5297-4e83-41e6-a6a2-883e4f350b8c.png)
+ - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar
+ ![codigo](https://user-images.githubusercontent.com/22267601/141997625-829ba24f-e6e1-40ad-bba3-1cf4c9cdaf57.png)
+ ![adicionarChave](https://user-images.githubusercontent.com/22267601/141997302-994840f1-244c-4774-bd86-b71d4c075656.png)
+
 3. Adicionar o Plugin o HTML Report 
- - Gerenciar Jenkins ![](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
- - Gerenciar Plugins ![](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
- - HTML Plugin ![](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
-4. Configurar o SufireReport ![](https://drive.google.com/uc?export=view&id=1wjPR5-tmVzqtBgG5mvHP8LPJSZiu4xE0)
-5. Configurar o HTML Report ![](https://drive.google.com/uc?export=view&id=12YJBvkgn1qXmyWdiDyKSq4IlAZRwVvNm)
+ - Gerenciar Jenkins 
+ ![gerenciar](https://user-images.githubusercontent.com/22267601/141996925-03a761d7-4ea4-49e3-8bfb-ccb2539b8a4d.png)
+ - Gerenciar Plugins 
+ ![gerenciarPlugins](https://user-images.githubusercontent.com/22267601/141996953-074e08f6-3eca-43f2-b917-bc9623f8c342.png)
+ - HTML Plugin 
+ ![htmlPlugin](https://user-images.githubusercontent.com/22267601/141996896-b7ca84df-ee7b-4b2e-b114-8c51f4f0afd5.png)
+ 
+4. Configurar o SufireReport 
+ ![jenkinssufire](https://user-images.githubusercontent.com/22267601/141996560-ef329f52-ef7a-4a6a-8d56-7f5c13ceb14a.png)
+ 
+5. Configurar o HTML Report
+![html](https://user-images.githubusercontent.com/22267601/141996599-cd718251-f903-4787-8462-cba212882b04.png)
+
+6. Rodar Projeto
+![buildJekins](https://user-images.githubusercontent.com/22267601/141997832-cd090135-153f-476c-a85b-bda3d04fae6a.png)
 
 ## 4. Definições Sobre Projeto
 
