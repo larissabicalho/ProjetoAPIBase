@@ -103,7 +103,7 @@ MariaDb/Mantis/Jenkis:
 
   
 
-## **1.2 Configuração inicial Mantis**
+## **1.3 Configuração inicial Mantis**
 
 Faça o seu primeiro acesso ao Mantis pelo endereço http://192.168.99.101:8989
 Após acessar será necessário configurar o banco de dados conforme tabela e valores abaixo:
@@ -124,7 +124,7 @@ O primeiro acesso deverá ser feito utilizando as credenciais *administrator/roo
 
   
 
-## **1.3 Acessar banco de dados Mantis/MariaDB**
+## **1.4 Acessar banco de dados Mantis/MariaDB**
 
 Para acessar ao banco de dados do Mantis (MariaDB) siga os passos abaixo:
 
