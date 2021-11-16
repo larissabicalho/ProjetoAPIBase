@@ -175,8 +175,8 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  - Configure o Job (Nome e Tipo)
  ![job](https://user-images.githubusercontent.com/22267601/141997722-bbba5297-4e83-41e6-a6a2-883e4f350b8c.png)
  - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar
- ![codigo](https://user-images.githubusercontent.com/22267601/141997625-829ba24f-e6e1-40ad-bba3-1cf4c9cdaf57.png)
  ![adicionarChave](https://user-images.githubusercontent.com/22267601/141997302-994840f1-244c-4774-bd86-b71d4c075656.png)
+ ![codigo](https://user-images.githubusercontent.com/22267601/141997625-829ba24f-e6e1-40ad-bba3-1cf4c9cdaf57.png)
 
 3. Adicionar o Plugin o HTML Report 
  - Gerenciar Jenkins 
@@ -187,7 +187,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  ![htmlPlugin](https://user-images.githubusercontent.com/22267601/141996896-b7ca84df-ee7b-4b2e-b114-8c51f4f0afd5.png)
  
 4. Configurar o SufireReport 
- ![jenkinssufire](https://user-images.githubusercontent.com/22267601/141996560-ef329f52-ef7a-4a6a-8d56-7f5c13ceb14a.png)
+![jenkinssufire](https://user-images.githubusercontent.com/22267601/141996560-ef329f52-ef7a-4a6a-8d56-7f5c13ceb14a.png)
  
 5. Configurar o HTML Report
 ![html](https://user-images.githubusercontent.com/22267601/141996599-cd718251-f903-4787-8462-cba212882b04.png)
