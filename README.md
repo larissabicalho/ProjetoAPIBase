@@ -191,7 +191,10 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
   -  Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js)  <img src="https://drive.google.com/uc?export=view&id=1AanHe0Q-5DW8aqS-nImAzEYfG9mNCeAE" style="center: 20cm; max-width: 100%; height: auto" />
   -  Script Utilizado <img src="https://drive.google.com/uc?export=view&id=1HxwRMJu2cIo9XAOSP6HjjfRZ_EV_uMY0" style="center: 30cm; max-width: 100%; height: auto" />
 - Criação de Queries para Inserir e Deletar informações necessárias <img src="https://drive.google.com/uc?export=view&id=19YT3RMgonexKwOSN7snct-0J9fHbuBKV" style="center: 500px; max-width: 100%; height: auto" />
-- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado <img src="https://drive.google.com/uc?export=view&id=1kyYNKhq6g5Ly4RHWIVcrKHS1UjDnzBYc" style="center: 500px; max-width: 100%; height: auto" />
+
+- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado 
+![relatorio](https://user-images.githubusercontent.com/22267601/141993615-3380dc4b-a8cd-46ee-9180-2ff245db5669.png)
+
 
 ## **4.1 Configurar o TimeTracking** 
  Passos Abaixo:
