@@ -173,7 +173,9 @@ Exemplo de execução no Postman:
 
 ![](https://i.imgur.com/sSofy8o.png)
 
-## 3. Jenkins
+## 3. ![hp3](https://user-images.githubusercontent.com/22267601/142078599-7a05f60f-55a1-406c-b723-2cca0f24837e.png)
+
+
 Para a execução remota dos testes automatizados, via jenkins foi executados os seguintes passos:
 
 1. Criação de um DockerFile, que está na pasta Utils do Projeto (atráves desse Dockerfile e criado uma imagem do Jenkins contendo o Maven)
@@ -219,7 +221,7 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
 
 ![buildJekins](https://user-images.githubusercontent.com/22267601/141997832-cd090135-153f-476c-a85b-bda3d04fae6a.png)
 
-## 4. Definições Sobre Projeto
+## 4. ![hp4](https://user-images.githubusercontent.com/22267601/142078606-90c7363a-d6d1-4874-afcb-0756fa518e6a.png)
 
 :heavy_check_mark: Foram Criados mais de 50 Scripts de Automação Utilizando as API's </br>
 
