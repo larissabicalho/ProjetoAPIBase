@@ -6,22 +6,19 @@ O sistema alvo é o [Mantis BugTracker](https://www.mantisbt.org)
 
 Durante o Desenvolvimento foram abordados os seguintes tópicos:
 
-- Setup inicial de projeto com Docker (MariaDB, Jenkins e  Mantis BT)
-- Criação de modelo de dados para o mapeamento de entidades em bancos de dados
-- Desenvolvimento de operações para: </br>
-  Criar,Remover e Atualizar (Issues,Projetos,Usuários, Filtros) </br>
-  Buscar(Usuários,Projetos,Issues,Filtros e Configurações)
-- Desenvolvimento de testes unitários para validação de funcionalides básicas: </br>
-  Criação, listagem, remoção, atulização de (Usuários,Projetos,Issues,Filtros e Configurações)  
-- Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel
-- Criação de um Script para criar uma string randomica em Java Script
-  Ambiente de CI utilizando o Jenkins
+:point_right: Setup inicial de projeto com Docker (MariaDB, Jenkins e  Mantis BT) </br>
+:point_right: Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel </br>
+:point_right: Criação de modelo de dados para o mapeamento de entidades em bancos de dados </br>
+:point_right: Desenvolvimento de operações para: Criar,Remover, Atualizar e Buscar (Issues,Projetos,Usuários, Filtros e Configurações) </br>
+:point_right: Desenvolvimento de testes unitários para validação de funcionalides básicas: Criação, listagem, remoção, atualização de (Usuários,Projetos,Issues,Filtros e Configurações) </br>
+:point_right:  Criação de um Script para criar uma string randomica em Java Script </br>
+:point_right: Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel  Ambiente de CI utilizando o Jenkins
 
 # 1. Preparação do ambiente Mantis
 
 Serão necessárias as seguinte configurações para iniciar o projeto:
 
--Foi utilizado com o DockerToolBox para instalação do DockerQuickStartTerminal e VirtualBox
+:green_book: Foi utilizado com o DockerToolBox para instalação do DockerQuickStartTerminal e VirtualBox
 
 **Docker-compose:**  neste repositório é possível encontrar um arquivo chamado "docker-compose.yml", este arquivo contem um grupo de imagens do Mantis, seu banco de dados e o Jenkins onde vai rodar o ambiente de CI. 
 
