@@ -9,11 +9,12 @@ Durante o Desenvolvimento foram abordados os seguintes tópicos:
 - Setup inicial de projeto com Docker (MariaDB, Jenkins e  Mantis BT)
 - Criação de modelo de dados para o mapeamento de entidades em bancos de dados
 - Desenvolvimento de operações para:
- * Criar,Remover e Atualizar (Issues,Projetos,Usuários, Filtros)
- * Buscar(Usuários,Projetos,Issues,Filtros e Configurações)
-- Desenvolvimento de testes unitários para validação de funcionalides básicas: criação, listagem, remoção, atulização de (Usuários,Projetos,Issues,Filtros e Configurações)*  Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel
- * Criação de um Script para criar uma string randomica em Java Script
- * Ambiente de CI utilizando o Jenkins
+  Criar,Remover e Atualizar (Issues,Projetos,Usuários, Filtros)
+  Buscar(Usuários,Projetos,Issues,Filtros e Configurações)
+- Desenvolvimento de testes unitários para validação de funcionalides básicas: criação, listagem, remoção, atulização de (Usuários,Projetos,Issues,Filtros e Configurações)  - 
+- Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel
+- Criação de um Script para criar uma string randomica em Java Script
+  Ambiente de CI utilizando o Jenkins
 
 # 1. Preparação do ambiente Mantis
 
