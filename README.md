@@ -196,7 +196,8 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
 ## **4.1 Configurar o TimeTracking** 
  Passos Abaixo:
 1. Gerenciar no Mantis
-3. Apos isso siga a imagem abaixo
-<img src="https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh" style="center: 500px; max-width: 100%; height: auto" />
+2. Apos isso siga a imagem abaixo
+![timetracking](https://user-images.githubusercontent.com/22267601/141993134-22138886-3d87-45a7-bdc4-8de94ce1cf30.png)
+
 3. A configuração será a seguinte
-<img src="https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c" style="center: 500px; max-width: 100%; height: auto" />
+![confiTrack](https://user-images.githubusercontent.com/22267601/141993178-f85a68a3-1447-4cd0-97d9-5e8e44a5a244.png)
