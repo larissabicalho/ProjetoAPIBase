@@ -22,7 +22,7 @@ Serão necessárias as seguinte configurações para iniciar o projeto:
 
 **Docker-compose:**  neste repositório é possível encontrar um arquivo chamado "docker-compose.yml", este arquivo contem um grupo de imagens do Mantis, seu banco de dados e o Jenkins onde vai rodar o ambiente de CI. 
 
-## **1.1 Setup Docker Mantis**
+## **1.1 ![hp5](https://user-images.githubusercontent.com/22267601/142079251-80f77370-8ce8-4cbd-ba06-b194db0bbb1e.png)**
 
 1.  Instalar a Máquina Virtual (Virtual Box)
 2.  Instalar o DockerToolbox
