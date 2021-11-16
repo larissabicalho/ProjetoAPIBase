@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PROJETO.iml" filepath="$PROJECT_DIR$/.idea/PROJETO.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javarestassuredtemplate-master/javarestassuredtestngtemplate.iml" filepath="$PROJECT_DIR$/javarestassuredtemplate-master/javarestassuredtestngtemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/javarestassuredtemplate-master.iml" filepath="$PROJECT_DIR$/.idea/javarestassuredtemplate-master.iml" />
     </modules>
   </component>
 </project>
