@@ -175,9 +175,9 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar![](https://drive.google.com/uc?export=view&id=1ies76OIM1RtCdVRc-L4Zh_D1DYNYiKpV)
 ![](https://drive.google.com/uc?export=view&id=1uzP0_J_McZFZK_hXjs64enB0-f2fMkui)
 3. Adicionar o Plugin o HTML Report 
- 3.1 Gerenciar Jenkins ![](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
- 3.2 Gerenciar Plugins ![](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
- 3.3 HTML Plugin ![](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
+ - Gerenciar Jenkins ![](https://drive.google.com/uc?export=view&id=1rP9YAUMwPvINps1PbIzmaUL6cZy5CcmR)
+ - Gerenciar Plugins ![](https://drive.google.com/uc?export=view&id=1Zv-V3VGlhqtl5vMzJs_WOt494wjTID4k)
+ - HTML Plugin ![](https://drive.google.com/uc?export=view&id=1l2S1t_5u6XCs0eG38LzNopVYypvVUt2T)
 4. Configurar o SufireReport ![](https://drive.google.com/uc?export=view&id=1wjPR5-tmVzqtBgG5mvHP8LPJSZiu4xE0)
 5. Configurar o HTML Report ![](https://drive.google.com/uc?export=view&id=12YJBvkgn1qXmyWdiDyKSq4IlAZRwVvNm)
 
