@@ -186,11 +186,19 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
 - Foram Criados mais de 50 Scripts de Automação Utilizando as API's 
 ![casosdeTeste](https://user-images.githubusercontent.com/22267601/141992815-a8b225e5-e44f-41fa-a79a-e7aa22be118c.png)
 
-- Criação de Projetos e Usuários Utilizando DataDriven <img src="https://drive.google.com/uc?export=view&id=1pf92vwCnNH9XDTpodudns6LwLj38mflS" style="center: 30cm; max-width: 100%; height: auto" />
-<img src="https://drive.google.com/uc?export=view&id=10YtEv5aQmaFkSlP34L1IEP5bAzuoTeCO" style="center: 30cm; max-width: 100%; height: auto" />
-  -  Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js)  <img src="https://drive.google.com/uc?export=view&id=1AanHe0Q-5DW8aqS-nImAzEYfG9mNCeAE" style="center: 20cm; max-width: 100%; height: auto" />
-  -  Script Utilizado <img src="https://drive.google.com/uc?export=view&id=1HxwRMJu2cIo9XAOSP6HjjfRZ_EV_uMY0" style="center: 30cm; max-width: 100%; height: auto" />
-- Criação de Queries para Inserir e Deletar informações necessárias <img src="https://drive.google.com/uc?export=view&id=19YT3RMgonexKwOSN7snct-0J9fHbuBKV" style="center: 500px; max-width: 100%; height: auto" />
+- Criação de Projetos e Usuários Utilizando DataDriven 
+![dataUser](https://user-images.githubusercontent.com/22267601/141995202-ed804bca-bdbe-4688-946b-beb56e380af6.png)
+
+![projeto](https://user-images.githubusercontent.com/22267601/141995279-b8c8cb97-eeed-46ba-ad17-57ef6059ac16.png)
+
+-  Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js) 
+![classe](https://user-images.githubusercontent.com/22267601/141994542-218f78a2-14f0-4db1-ad34-64e7d4d551f3.png)
+ 
+-  Script Utilizado 
+![funcao](https://user-images.githubusercontent.com/22267601/141994442-75abbfa9-0035-4975-b3f0-73c238d49695.png)
+
+- Criação de Queries para Inserir e Deletar informações necessárias 
+![queries](https://user-images.githubusercontent.com/22267601/141994040-365db98f-1e5b-4800-beb5-90f9cd6bb4e0.png)
 
 - Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado 
 ![relatorio](https://user-images.githubusercontent.com/22267601/141993615-3380dc4b-a8cd-46ee-9180-2ff245db5669.png)
