@@ -180,59 +180,82 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Execute o comando no QuickStartTerminal> `docker build -t jenkins-maven .` ex. Faça isso antes de subir o compose 
 2. Acessar o endereço do Jenkins vai ter provávelmente nesse endereço : http://192.168.99.101:8081 vai ser necessário uma chave.
  Execute o comando no QuickStartTerminal> `docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword `
- - Crie um novo Job 
- ![jenkinsjob](https://user-images.githubusercontent.com/22267601/141997787-e4c13727-b279-4fe2-b0e7-fc4c09668da8.png)
- - Configure o Job (Nome e Tipo)
+ :heavy_check_mark: Crie um novo Job </br>
+ 
+ ![jenkinsjob](https://user-images.githubusercontent.com/22267601/141997787-e4c13727-b279-4fe2-b0e7-fc4c09668da8.png) </br>
+ :heavy_check_mark: Configure o Job (Nome e Tipo) </br>
+ 
  ![job](https://user-images.githubusercontent.com/22267601/141997722-bbba5297-4e83-41e6-a6a2-883e4f350b8c.png)
- - Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar
- ![adicionarChave](https://user-images.githubusercontent.com/22267601/141997302-994840f1-244c-4774-bd86-b71d4c075656.png)
- ![codigo](https://user-images.githubusercontent.com/22267601/141997625-829ba24f-e6e1-40ad-bba3-1cf4c9cdaf57.png)
+ 
+ :heavy_check_mark:Colocar o Projeto Git no Jenkins e Adicionar as credenciais git para baixar <br>
+ 
+ ![adicionarChave](https://user-images.githubusercontent.com/22267601/141997302-994840f1-244c-4774-bd86-b71d4c075656.png) </br>
+ 
+ ![codigo](https://user-images.githubusercontent.com/22267601/141997625-829ba24f-e6e1-40ad-bba3-1cf4c9cdaf57.png) </br>
 
 3. Adicionar o Plugin o HTML Report 
- - Gerenciar Jenkins 
+
+ :heavy_check_mark: Gerenciar Jenkins </br>
+ 
  ![gerenciar](https://user-images.githubusercontent.com/22267601/141996925-03a761d7-4ea4-49e3-8bfb-ccb2539b8a4d.png)
- - Gerenciar Plugins 
+ 
+ :heavy_check_mark: Gerenciar Plugins </br>
+ 
  ![gerenciarPlugins](https://user-images.githubusercontent.com/22267601/141996953-074e08f6-3eca-43f2-b917-bc9623f8c342.png)
- - HTML Plugin 
+ 
+ :heavy_check_mark: HTML Plugin </br> </br>
+ 
  ![htmlPlugin](https://user-images.githubusercontent.com/22267601/141996896-b7ca84df-ee7b-4b2e-b114-8c51f4f0afd5.png)
  
-4. Configurar o SufireReport 
+4. Configurar o SufireReport </br>
+
 ![jenkinssufire](https://user-images.githubusercontent.com/22267601/141996560-ef329f52-ef7a-4a6a-8d56-7f5c13ceb14a.png)
  
-5. Configurar o HTML Report
+5. Configurar o HTML Report </br>
+
 ![html](https://user-images.githubusercontent.com/22267601/141996599-cd718251-f903-4787-8462-cba212882b04.png)
 
-6. Rodar Projeto
+6. Rodar Projeto </br>
+
 ![buildJekins](https://user-images.githubusercontent.com/22267601/141997832-cd090135-153f-476c-a85b-bda3d04fae6a.png)
 
 ## 4. Definições Sobre Projeto
 
-- Foram Criados mais de 50 Scripts de Automação Utilizando as API's 
+:heavy_check_mark: Foram Criados mais de 50 Scripts de Automação Utilizando as API's </br>
+
 ![casosdeTeste](https://user-images.githubusercontent.com/22267601/141992815-a8b225e5-e44f-41fa-a79a-e7aa22be118c.png)
 
-- Criação de Projetos e Usuários Utilizando DataDriven 
-![dataUser](https://user-images.githubusercontent.com/22267601/141995202-ed804bca-bdbe-4688-946b-beb56e380af6.png)
+:heavy_check_mark: Criação de Projetos e Usuários Utilizando DataDriven </br>
+
+![dataUser](https://user-images.githubusercontent.com/22267601/141995202-ed804bca-bdbe-4688-946b-beb56e380af6.png)</br>
+
 
 ![projeto](https://user-images.githubusercontent.com/22267601/141995279-b8c8cb97-eeed-46ba-ad17-57ef6059ac16.png)
 
--  Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js) 
+:heavy_check_mark: Nome de Projeto e Usuário utilizando uma String Randomica gerada através do JavaScript(Node.Js) </br>
+
 ![classe](https://user-images.githubusercontent.com/22267601/141994542-218f78a2-14f0-4db1-ad34-64e7d4d551f3.png)
  
--  Script Utilizado 
+:heavy_check_mark: Script Utilizado </br>
+
 ![funcao](https://user-images.githubusercontent.com/22267601/141994442-75abbfa9-0035-4975-b3f0-73c238d49695.png)
 
-- Criação de Queries para Inserir e Deletar informações necessárias 
+:heavy_check_mark: Criação de Queries para Inserir e Deletar informações necessárias </br>
+
 ![queries](https://user-images.githubusercontent.com/22267601/141994040-365db98f-1e5b-4800-beb5-90f9cd6bb4e0.png)
 
-- Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado 
+:heavy_check_mark: Utilização do Jenkins como Ambiente de CI para rodar e também mostrar o relatório gerado </br>
+
 ![relatorio](https://user-images.githubusercontent.com/22267601/141993615-3380dc4b-a8cd-46ee-9180-2ff245db5669.png)
 
 
 ## **4.1 Configurar o TimeTracking** 
  Passos Abaixo:
 1. Gerenciar no Mantis
-2. Apos isso siga a imagem abaixo
+2. Apos isso siga a imagem abaixo </br>
+
 ![timetracking](https://user-images.githubusercontent.com/22267601/141993134-22138886-3d87-45a7-bdc4-8de94ce1cf30.png)
 
-3. A configuração será a seguinte
+3. A configuração será a seguinte </br>
+
 ![confiTrack](https://user-images.githubusercontent.com/22267601/141993178-f85a68a3-1447-4cd0-97d9-5e8e44a5a244.png)
