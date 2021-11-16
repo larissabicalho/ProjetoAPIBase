@@ -8,7 +8,7 @@ Durante o Desenvolvimento foram abordados os seguintes tópicos:
 
 - Setup inicial de projeto com Docker (MariaDB, Jenkins e  Mantis BT)
 - Criação de modelo de dados para o mapeamento de entidades em bancos de dados
-- Desenvolvimento de operações para:
+- Desenvolvimento de operações para: </br>
   Criar,Remover e Atualizar (Issues,Projetos,Usuários, Filtros) </br>
   Buscar(Usuários,Projetos,Issues,Filtros e Configurações)
 - Desenvolvimento de testes unitários para validação de funcionalides básicas: criação, listagem, remoção, atulização de (Usuários,Projetos,Issues,Filtros e Configurações)  
