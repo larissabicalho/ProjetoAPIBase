@@ -139,7 +139,7 @@ Para acessar ao banco de dados do Mantis (MariaDB) siga os passos abaixo:
 | Password| root |
 
 
-## 2. Mantis Bug Tracker REST API
+## 2. ![hp2](https://user-images.githubusercontent.com/22267601/142078307-39b9ea58-6c9e-45f7-89e1-6fcca3c5eed9.png)
 
 Uma vez com a aplicação sendo executada pelo Docker, é possível também realizar testes manuais ou automatizados de API Rest no Mantis.
 
