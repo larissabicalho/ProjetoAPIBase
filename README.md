@@ -14,7 +14,7 @@ Durante o Desenvolvimento foram abordados os seguintes tópicos:
 :point_right:  Criação de um Script para criar uma string randomica em Java Script </br>
 :point_right: Criação de testes DataDriven para Usuários e Projetos lendo de um arquivo Excel  Ambiente de CI utilizando o Jenkins
 
-# 1. Preparação do ambiente Mantis
+# 1. ![figura](https://user-images.githubusercontent.com/22267601/142075497-60668d7e-5a80-4b9b-a084-fb4d52d83773.png)
 
 Serão necessárias as seguinte configurações para iniciar o projeto:
 
