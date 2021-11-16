@@ -196,6 +196,6 @@ Para a execução remota dos testes automatizados, via jenkins foi executados os
  Passos Abaixo:
 1. Gerenciar no Mantis
 2. Apos isso siga a imagem abaixo
-<img src="https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh" style="width: 650px; max-width: 100%; height: auto" />
+<img src="https://drive.google.com/uc?export=view&id=1Zmswgxi8BmPbXyfuHuGc47SkfE_jBkrh" style="width: 300px; max-width: 100%; height: auto" />
 3. A configuração será a seguinte
-<img src="https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c" style="width: 650px; max-width: 100%; height: auto" />
+<img src="https://drive.google.com/uc?export=view&id=11-FSrNSqcUs2kZr-6AQE6KtEukEdgk9c" style="width: 300px; max-width: 100%; height: auto" />
