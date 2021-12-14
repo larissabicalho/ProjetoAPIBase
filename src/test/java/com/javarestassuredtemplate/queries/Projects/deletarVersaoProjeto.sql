@@ -1,0 +1,1 @@
+DELETE FROM bugtracker.mantis_project_version_table WHERE project_id = '$idProjeto'

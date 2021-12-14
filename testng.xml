@@ -1,0 +1,7 @@
+<suite thread-count="2" name="LambaTestSuite" parallel="tests">
+    <test name = "Test">
+        <packages>
+            <package name="com.javarestassuredtemplate.tests.Issues.*" />
+        </packages>
+    </test>
+</suite>

@@ -35,6 +35,7 @@ public class CriarVersionProjetoTests extends TestBase {
         response.statusCode(statusCodeEsperado);
         response.statusLine(containsString("Version created"));
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarProjetoDBSteps.deletarProjetoVersao(idProjeto);
     }
 
     @Test

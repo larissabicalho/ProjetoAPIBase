@@ -24,6 +24,13 @@ public class BuscarProjetoDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+    public static void deletarProjetoVersao(String id) {
+        String query = GeneralUtils.readFileToAString(queriesPath + "deletarVersaoProjeto.sql");
+        query = query.replace("$idProjeto", id);
+        DBUtils.getQueryResult(query);
+    }
+
+
 
     public static String retornaIdProjeto() {
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornaIdProjeto.sql");
