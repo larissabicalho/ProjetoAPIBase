@@ -1,1 +1,1 @@
-SELECT id,project_id,summary FROM bugtracker.mantis_bug_table order by id desc
+SELECT bug_text_id FROM bugtracker.mantis_bug_table where id = '$id'

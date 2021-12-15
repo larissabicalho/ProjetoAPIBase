@@ -38,18 +38,19 @@ public class DeletarRelatiobshipIssuesProjetoTests extends TestBase {
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
-        ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
 
         int n = 0;
         while (n <= idsIssues.size() - 3) {
+            String idTextoDelete = BuscarIssueDBSteps.retornarIdTexto(idsIssues.get(n));
+            BuscarIssueDBSteps.deletarTextoId(idTextoDelete);
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
 
-        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
-
-        for (int v = 0; v < idsTexto.size(); v++) {
-            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
+        int p = 1;
+        while (p <= idsIssues.size() - 2) {
+            BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
+            p = p + 3;
         }
 
     }

@@ -89,7 +89,12 @@ public class GerarDados {
 
 
     public static String sumarioIssue() {
-        return "Sumario Larissa" + " " + GerarDados.getRandomString(10);
+        return "Sumario Larissa" + " " + "V"+GerarDados.getRandomString(10);
+
+    }
+
+    public static String sumarioIssueSegunda() {
+        return "Sumario Larissa Segunda" + " " + GerarDados.getRandomString(10);
 
     }
 

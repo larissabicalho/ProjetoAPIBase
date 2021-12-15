@@ -42,8 +42,8 @@ public class MonitorarIssueTests extends TestBase {
         );
 
         BuscarIssueDBSteps.deletarMonitoramento(idIssue);
-        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarIssueId(idIssue);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
         BuscarIssueDBSteps.deletarTextoId(idTexto);
     }
 

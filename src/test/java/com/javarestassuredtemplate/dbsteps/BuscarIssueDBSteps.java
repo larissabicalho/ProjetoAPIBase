@@ -26,6 +26,16 @@ public class BuscarIssueDBSteps {
         DBUtils.getQueryResult(query);
     }
 
+    public static void insereIssueMesmoProjeto(String projectId, String idTexto) {
+        String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssue.sql");
+        query = query.replace("$project_id", projectId);
+        query = query.replace("$bug_text_id", idTexto);
+        query = query.replace("$summary", GerarDados.sumarioIssueSegunda());
+        query = query.replace("$date_submitted", GerarDados.gerarData());
+        query = query.replace("$last_updated", GerarDados.gerarData());
+        DBUtils.getQueryResult(query);
+    }
+
     public static void insereIssueHandlerId(String projectId, String idTexto) {
         String query = GeneralUtils.readFileToAString(queriesPath + "inserirIssueHandler.sql");
         query = query.replace("$project_id", projectId);
@@ -63,10 +73,6 @@ public class BuscarIssueDBSteps {
         return DBUtils.getQueryResult(queryResultado);
     }
 
-    public static ArrayList<String> retornaIdsIssue() {
-        String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarIdTodasIssue.sql");
-        return DBUtils.getQueryResult(queryResultado);
-    }
 
     public static ArrayList<String> retornaDadosTodasIssue() {
         String queryResultado = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodasIssue.sql");
@@ -261,6 +267,13 @@ public class BuscarIssueDBSteps {
         String query = GeneralUtils.readFileToAString(queriesPath + "retornarDadosIssueFilter.sql");
         return DBUtils.getQueryResult(query);
     }
+
+    public static String retornarIdTexto(String idIssue) {
+        String query = GeneralUtils.readFileToAString(queriesPath + "retornarDadosTodosTextosIssue.sql");
+        query = query.replace("$id", idIssue);
+        return DBUtils.getQueryResult(query).get(0);
+    }
+
 
 
 }

@@ -52,11 +52,6 @@ public class AddAttachmentIssueTests extends TestBase {
 
     @Test
     public void addFileComErro() throws IOException, SQLException {
-        BuscarProjetoDBSteps.insereProjeto();
-        String idProjeto = BuscarProjetoDBSteps.retornaDadosProjeto().get(0);
-        BuscarIssueDBSteps.insereTexto();
-        String idTexto = BuscarIssueDBSteps.retornaDadosTexto().get(0);
-        BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
         String idIssue = GlobalStaticParameters.idIssue;
         AddAttachment addAttachment = new AddAttachment();
         addAttachment.setDados();
@@ -67,9 +62,6 @@ public class AddAttachmentIssueTests extends TestBase {
         response.log().all();
         response.statusCode(statusCodeEsperadoErro);
         response.statusLine(mensagemErroAttachment);
-        BuscarIssueDBSteps.deletarIssue();
-        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
-        BuscarIssueDBSteps.deletarTexto();
 
     }
 }

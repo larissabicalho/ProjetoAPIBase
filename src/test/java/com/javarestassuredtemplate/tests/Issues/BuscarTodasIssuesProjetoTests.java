@@ -33,15 +33,14 @@ public class BuscarTodasIssuesProjetoTests extends TestBase {
         BuscarIssueDBSteps.insereIssue(idProjeto, idTexto);
         BuscarIssueDBSteps.insereTexto();
         String idTextoIssue2 = BuscarIssueDBSteps.retornaDadosTexto().get(0);
-        BuscarIssueDBSteps.insereIssue(idProjeto, idTextoIssue2);
+        BuscarIssueDBSteps.insereIssueMesmoProjeto(idProjeto, idTextoIssue2);
+        ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssueIdProjeto(idProjeto);
         buscarIssuesProjectIdRequest = new BuscarIssuesProjectIdRequest(idProjeto);
         response = buscarIssuesProjectIdRequest.executeRequest();
         //Validações
         response.log().all();
         response.statusCode(statusCodeEsperado);
 
-        ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssueIdProjeto(idProjeto);
-        ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
         int iiD = 0;
         int jProject = 1;
         int kSummary = 2;
@@ -61,15 +60,14 @@ public class BuscarTodasIssuesProjetoTests extends TestBase {
 
         int n = 0;
         while (n <= idsIssues.size() - 3) {
+            String idTextoDelete = BuscarIssueDBSteps.retornarIdTexto(idsIssues.get(n));
+            BuscarIssueDBSteps.deletarTextoId(idTextoDelete);
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
 
         BuscarProjetoDBSteps.deletarProjeto(idProjeto);
 
-        for (int v = 0; v < idsTexto.size(); v++) {
-            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
-        }
 
     }
 }

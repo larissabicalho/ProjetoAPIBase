@@ -37,7 +37,6 @@ public class BuscarIssueFilterUnassignedTests extends TestBase {
         response.statusCode(statusCodeEsperado);
 
         ArrayList<String> idsIssues = BuscarIssueDBSteps.retornaDadosTodasIssuesUnassigned();
-        ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
         int iiD = 0;
         int jProject = 1;
         int kSummary = 2;
@@ -57,6 +56,8 @@ public class BuscarIssueFilterUnassignedTests extends TestBase {
 
         int n = 0;
         while (n <= idsIssues.size() - 3) {
+            String idTextoDelete = BuscarIssueDBSteps.retornarIdTexto(idsIssues.get(n));
+            BuscarIssueDBSteps.deletarTextoId(idTextoDelete);
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
@@ -65,9 +66,6 @@ public class BuscarIssueFilterUnassignedTests extends TestBase {
         while (p <= idsIssues.size() - 2) {
             BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
             p = p + 3;
-        }
-        for (int v = 0; v < idsTexto.size(); v++) {
-            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
         }
 
     }

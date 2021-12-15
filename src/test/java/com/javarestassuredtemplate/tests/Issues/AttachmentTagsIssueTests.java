@@ -55,9 +55,9 @@ public class AttachmentTagsIssueTests extends TestBase {
         );
 
 
-        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
-        BuscarIssueDBSteps.deletarTags();
         BuscarIssueDBSteps.deletarIssueId(idIssue);
+        BuscarProjetoDBSteps.deletarProjeto(idProjeto);
+        BuscarIssueDBSteps.deletarTags();;
         BuscarIssueDBSteps.deletarTextoId(idTexto);
     }
 }

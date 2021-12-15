@@ -37,7 +37,6 @@ public class FilterIssueTests extends TestBase {
         BuscarIssueDBSteps.insereIssueUrgente2(idProjeto, idTextoIssue2);
 
         ArrayList<String> idsIssues = BuscarIssueDBSteps.retornarIssueFilter();
-        ArrayList<String> idsTexto = BuscarIssueDBSteps.retornaIdsTexto();
 
         buscarFilterRequest = new BuscarFilterRequest(filterId);
         response = buscarFilterRequest.executeRequest();
@@ -67,6 +66,8 @@ public class FilterIssueTests extends TestBase {
 
         int n = 0;
         while (n <= idsIssues.size() - 3) {
+            String idTextoDelete = BuscarIssueDBSteps.retornarIdTexto(idsIssues.get(n));
+            BuscarIssueDBSteps.deletarTextoId(idTextoDelete);
             BuscarIssueDBSteps.deletarIssueId(idsIssues.get(n));
             n = n + 3;
         }
@@ -75,9 +76,6 @@ public class FilterIssueTests extends TestBase {
         while (p <= idsIssues.size() - 2) {
             BuscarProjetoDBSteps.deletarProjeto(idsIssues.get(p));
             p = p + 3;
-        }
-        for (int v = 0; v < idsTexto.size(); v++) {
-            BuscarIssueDBSteps.deletarTextoId(idsTexto.get(v));
         }
 
 
